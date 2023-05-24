@@ -60,9 +60,9 @@ const Example = () => {
   const [gridSlider, setGridSlider] = useState(10);
 
   const [animationSettings, setAnimationSettings] = useState({
-    duration: 2,
-    transformX: 25,
-    transformY: 25,
+    duration: 100,
+    transformX: 32.1,
+    transformY: 22.2,
   });
 
   console.log(throwball50);
@@ -170,7 +170,7 @@ const Example = () => {
           >
             <Image
               fluid
-              src={throwballNoBall10Vert}
+              src={throwballNoBall10}
               alt="madison-olguin"
               className="opacity-100"
             />
@@ -189,7 +189,7 @@ const Example = () => {
           >
             <Image
               fluid
-              src={throwballBall10Vert}
+              src={throwballBall10}
               alt="madison-olguin"
               className="opacity-100"
             />

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useRef } from "react";
 
 //bootstrap
 import { Container } from "react-bootstrap";
@@ -29,113 +30,125 @@ import {
   throwballBall10Vert,
 } from "../assets/images/jumbo/";
 
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
+import {
+  motion,
+  useScroll,
+  useSpring,
+  useTransform,
+  MotionValue,
+} from "framer-motion";
+
+// function useParallax(value, distance) {
+//   return useTransform(value, [0, 1], [-distance, distance]);
+// }
+
+function PageContainer(props) {
+  const ref = useRef(null);
+  // const { scrollYProgress } = useScroll({ target: ref });
+  //   const y = useParallax(scrollYProgress, 300);
+
+  return (
+    <div className="vh-100 w-100 border border-white snap-container">
+      <div ref={ref}>Test Page</div>
+      {/* <motion.h2 style={{ y }}>{`#003`}</motion.h2> */}
+    </div>
+  );
+}
 
 const Home = () => {
-  const [bgDelay, setBgDelay] = useState(0);
-
-  const animationSettings = {
+  const ballAnimationSettings = {
     duration: 100,
-    originX: 26.3,
-    originY: 22.3,
+    vertical: {
+      originX: 26.3,
+      originY: 22.2,
+    },
+    horizontal: {
+      originX: 32.1,
+      originY: 22.2,
+    },
   };
+
+  //   const { scrollYProgress } = useScroll();
+  //   const scaleX = useSpring(scrollYProgress, {
+  //     stiffness: 100,
+  //     damping: 30,
+  //     restDelta: 0.001,
+  //   });
 
   return (
     <>
-      <Container
-        fluid
-        className="bg-dark bg-gradient overflow-hidden position-relative"
-      >
-        <motion.div
-          className="position-relative m-auto"
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          transition={{ type: "spring", stiffness: 400, damping: 17 }}
-        >
-          <motion.div
-            className="position-absolute"
-            initial={{ opacity: 0, scale: 0.25 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{
-              duration: 0.8,
-              delay: 0.5,
-              ease: [0, 0.71, 0.2, 1.01],
-            }}
-          >
-            <Image
-              fluid
-              src={throwballNoBall10Vert}
-              alt="madison-olguin"
-              className="opacity-100"
-            />
-          </motion.div>
-
-          <motion.div
-            className="position-absolute"
-            style={{
-              transformOrigin: `${animationSettings.originX}% ${animationSettings.originY}%`,
-            }}
-            animate={{ rotate: -360 }}
-            transition={{
-              duration: animationSettings.duration,
-              ease: "linear",
-              repeat: Infinity,
-            }}
-          >
+      <div className="bg-dark bg-gradient text-white">
+        <Container fluid className="vh-100">
+          <div className="position-relative d-flex ">
             <motion.div
-              initial={{ opacity: 0, scale: 0.1 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{
-                duration: 1.8,
-                delay: 0.5,
-                ease: [0, 0.71, 0.2, 1.01],
-              }}
+              className="position-relative m-auto"
+              whileHover={{ scale: 1.1, opacity: 1 }}
+              whileTap={{ scale: 0.9 }}
+              transition={{ type: "spring", stiffness: 400, damping: 17 }}
             >
+              <motion.div
+                className="position-absolute"
+                initial={{ opacity: 0, scale: 0.25 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{
+                  duration: 0.8,
+                  delay: 0.5,
+                  ease: [0, 0.71, 0.2, 1.01],
+                }}
+              >
+                <Image
+                  fluid
+                  src={throwballNoBall50Vert}
+                  alt="madison-olguin"
+                  className="drop-shadow"
+                />
+              </motion.div>
+
+              <motion.div
+                className="position-absolute"
+                style={{
+                  transformOrigin: `${ballAnimationSettings.vertical.originX}% ${ballAnimationSettings.vertical.originY}%`,
+                }}
+                animate={{ rotate: -360 }}
+                transition={{
+                  duration: ballAnimationSettings.duration,
+                  ease: "linear",
+                  repeat: Infinity,
+                }}
+              >
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.1 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{
+                    duration: 1.8,
+                    delay: 0.5,
+                    ease: [0, 0.71, 0.2, 1.01],
+                  }}
+                >
+                  <Image
+                    fluid
+                    src={throwballBall10Vert}
+                    alt="madison-olguin"
+                    //   className=""
+                  />
+                </motion.div>
+              </motion.div>
+
               <Image
                 fluid
-                src={throwballBall10Vert}
-                alt="madison-olguin"
-                className="opacity-100"
+                src={throwballNoBall10Vert}
+                alt="basketball"
+                className="opacity-0"
               />
             </motion.div>
-          </motion.div>
-
-          <Image
-            fluid
-            src={throwballNoBall10Vert}
-            alt="madison-olguin"
-            className="opacity-0"
-          />
-        </motion.div>
-
-        {/* <motion.div
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          transition={{ type: "spring", stiffness: 400, damping: 17 }}
-        >
-          <motion.div
-            animate={{ rotate: -360 }}
-            transition={{
-              duration: 36,
-              repeat: Infinity,
-            }}
-          >
-            <Image
-              fluid
-              hidden
-              src={throwballBall10Vert}
-              alt="madison-olguin"
-              className="opacity-100"
-            />
-          </motion.div>
-        </motion.div> */}
-      </Container>
-      <Row>
-        <Col>
-          <div></div>
-        </Col>
-        <Col></Col>
-      </Row>
+          </div>
+        </Container>
+        {[0, 1, 2, 3, 4].map((id, index) => (
+          <PageContainer key={index} />
+        ))}
+        <Container fluid className="vh-100"></Container>
+      </div>
     </>
   );
 };
