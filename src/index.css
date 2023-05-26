@@ -16,3 +16,82 @@ code {
   -webkit-filter: drop-shadow(10px 10px 10px #000000);
   filter: drop-shadow(10px 10px 10px #000000);
 }
+
+html {
+  --banner-bg-color: #193a71;
+
+  scroll-snap-type: y mandatory;
+}
+
+/* img {
+  overflow-clip-margin: content-box;
+  overflow: clip;
+} */
+
+.scroll-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: center;
+  padding: 0px;
+  overflow: hidden;
+}
+
+.page-container {
+  display: block;
+  width: 100%;
+}
+
+.content-container {
+  position: relative;
+  max-height: 90vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.banner-row {
+  position: relative;
+  margin-top: -20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.banner-container {
+  padding-top: 20%;
+  padding-bottom: 20%;
+  width: 80%;
+  max-width: 350px;
+  /* transform: skew(-20deg); */
+  position: relative;
+}
+
+.banner-bg {
+  padding-top: 20%;
+  padding-bottom: 20%;
+  background-color: var(--banner-bg-color);
+  width: 100%;
+  max-width: 350px;
+  transform: skew(-20deg);
+  filter: drop-shadow(10px 10px 10px #000000);
+  position: absolute;
+  top: 0px;
+}
+
+.banner-content {
+  position: absolute;
+  filter: drop-shadow(4px 4px 2px #000000);
+}
+
+#madison {
+  top: -12%;
+  left: -6%;
+}
+
+#olguin {
+  top: -12%;
+  left: -6%;
+}
