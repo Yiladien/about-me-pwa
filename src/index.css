@@ -29,7 +29,7 @@ html {
 } */
 
 .scroll-container {
-  height: 100vh;
+  height: 100svh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -45,7 +45,7 @@ html {
 
 .content-container {
   position: relative;
-  max-height: 90vh;
+  max-height: 90svh;
   width: 100%;
   overflow: hidden;
   display: flex;
