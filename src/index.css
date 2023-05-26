@@ -69,16 +69,26 @@ html {
   position: relative;
 }
 
+.banner-box {
+  padding-top: 20%;
+  padding-bottom: 20%;
+  width: 100%;
+  max-width: 350px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
 .banner-bg {
   padding-top: 20%;
   padding-bottom: 20%;
   background-color: var(--banner-bg-color);
   width: 100%;
   max-width: 350px;
-  transform: skew(-20deg);
   filter: drop-shadow(10px 10px 10px #000000);
   position: absolute;
   top: 0px;
+  left: 0px;
 }
 
 .banner-content {
@@ -87,11 +97,11 @@ html {
 }
 
 #madison {
-  top: -12%;
-  left: -6%;
+  top: -15%;
+  left: -15%;
 }
 
 #olguin {
-  top: -12%;
-  left: -6%;
+  top: -15%;
+  left: -15%;
 }
