@@ -175,6 +175,18 @@ const Home = () => {
                   </Col>
                   <Col></Col>
                 </Row>
+                <a
+                  href="https://twitter.com/MadisonOlguin21?ref_src=twsrc%5Etfw"
+                  className="twitter-follow-button"
+                  data-show-count="false"
+                >
+                  Follow @MadisonOlguin21
+                </a>
+                <script
+                  async
+                  src="https://platform.twitter.com/widgets.js"
+                  charSet="utf-8"
+                ></script>
               </div>
             </div>
           </div>
@@ -225,6 +237,20 @@ const Home = () => {
                     <Facebook />
                   </Col>
                 </Row>
+                <a
+                  className="twitter-timeline"
+                  data-width="300"
+                  data-dnt="true"
+                  data-theme="dark"
+                  href="https://twitter.com/MadisonOlguin21?ref_src=twsrc%5Etfw"
+                >
+                  Tweets by MadisonOlguin21
+                </a>{" "}
+                <script
+                  async
+                  src="https://platform.twitter.com/widgets.js"
+                  charSet="utf-8"
+                ></script>
               </div>
             </div>
           </div>
