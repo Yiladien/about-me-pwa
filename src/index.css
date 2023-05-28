@@ -50,6 +50,7 @@ html {
   overflow: hidden;
   display: flex;
   justify-content: center;
+  overflow: hidden;
 }
 
 .banner-row {
@@ -61,47 +62,85 @@ html {
 }
 
 .banner-container {
-  padding-top: 20%;
-  padding-bottom: 20%;
-  width: 80%;
+  width: 90%;
   max-width: 350px;
-  /* transform: skew(-20deg); */
   position: relative;
 }
 
 .banner-box {
-  padding-top: 20%;
-  padding-bottom: 20%;
+  /* padding-top: 20%;
+  padding-bottom: 20%; */
   width: 100%;
   max-width: 350px;
-  position: absolute;
-  top: 0px;
-  left: 0px;
+  position: relative;
 }
 
 .banner-bg {
-  padding-top: 20%;
-  padding-bottom: 20%;
+  /* padding-top: 20%;
+  padding-bottom: 20%; */
   background-color: var(--banner-bg-color);
-  width: 100%;
+  width: 80%;
+  height: 100%;
   max-width: 350px;
   filter: drop-shadow(10px 10px 10px #000000);
   position: absolute;
   top: 0px;
-  left: 0px;
+  left: 10%;
 }
 
 .banner-content {
   position: absolute;
+  width: 100%;
   filter: drop-shadow(4px 4px 2px #000000);
 }
 
 #madison {
   top: -15%;
-  left: -15%;
+  left: 0%;
+  width: 95%;
+}
+
+#letter-m {
+  top: -15%;
+  left: 0%;
+  width: 95%;
+}
+
+#letter-m {
+  top: -200%;
+  left: 0%;
+  width: 250%;
 }
 
 #olguin {
-  top: -15%;
-  left: -15%;
+  top: 38%;
+  left: 35%;
+  width: 95%;
+}
+
+#letter-m-transparent {
+  position: relative;
+}
+
+.svg-icon-link {
+  /* background-color: #e91d00; */
+  display: inline-block;
+  width: 5em;
+  height: 5em;
+  padding-top: 5em;
+  border-radius: 0.5em;
+}
+
+.svg-icon-link:hover {
+  transform: translate(2px, -2px);
+}
+
+.btn {
+  line-height: 1em !important;
+}
+
+.btn svg {
+  margin-bottom: 0.1em;
+  /* margin-left: 0.1em;
+  margin-right: 0.1em; */
 }

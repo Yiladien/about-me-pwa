@@ -10,23 +10,9 @@ import Form from "react-bootstrap/Form";
 // import image1 from "../assets/images/jumbo/olguin-1400x933.png";
 import {
   throwball50,
-  throwball25,
-  throwball10,
-  throwballNoBall50,
-  throwballNoBall25,
   throwballNoBall10,
-  throwballBall50,
-  throwballBall25,
   throwballBall10,
-  throwball50Vert,
-  throwball25Vert,
-  throwball10Vert,
-  throwballNoBall50Vert,
-  throwballNoBall25Vert,
   throwballNoBall10Vert,
-  throwballBall50Vert,
-  throwballBall25Vert,
-  throwballBall10Vert,
 } from "../assets/images/jumbo/";
 
 import { motion } from "framer-motion";

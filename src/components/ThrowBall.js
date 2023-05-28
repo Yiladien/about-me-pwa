@@ -1,28 +1,26 @@
 import React from "react";
 
 //bootstrap
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import Image from "react-bootstrap/Image";
 
 import {
-  throwball50,
-  throwball25,
-  throwball10,
-  throwballNoBall50,
-  throwballNoBall25,
-  throwballNoBall10,
-  throwballBall50,
-  throwballBall25,
-  throwballBall10,
-  throwball50Vert,
-  throwball25Vert,
-  throwball10Vert,
+  // throwball50,
+  // throwball25,
+  // throwball10,
+  // throwballNoBall50,
+  // throwballNoBall25,
+  // throwballNoBall10,
+  // throwballBall50,
+  // throwballBall25,
+  // throwballBall10,
+  // throwball50Vert,
+  // throwball25Vert,
+  // throwball10Vert,
   throwballNoBall50Vert,
-  throwballNoBall25Vert,
+  // throwballNoBall25Vert,
   throwballNoBall10Vert,
-  throwballBall50Vert,
-  throwballBall25Vert,
+  // throwballBall50Vert,
+  // throwballBall25Vert,
   throwballBall10Vert,
 } from "../assets/images/jumbo/";
 
@@ -56,8 +54,8 @@ const ThrowBall = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{
             duration: 0.8,
-            delay: 0.5,
-            ease: [0, 0.71, 0.2, 1.01],
+            delay: 1.5,
+            ease: "easeInOut",
           }}
         >
           <Image
@@ -70,23 +68,35 @@ const ThrowBall = () => {
 
         <motion.div
           className="position-absolute"
-          style={{
-            transformOrigin: `${ballAnimationSettings.vertical.originX}% ${ballAnimationSettings.vertical.originX}%`,
+          // style={{
+          //   transformOrigin: `${ballAnimationSettings.vertical.originX}% ${ballAnimationSettings.vertical.originY}%`,
+          // }}
+          initial={{
+            originX: `${ballAnimationSettings.vertical.originX}%`,
+            originY: `${ballAnimationSettings.vertical.originY}%`,
           }}
-          animate={{ rotate: -360 }}
+          animate={{
+            rotate: -360,
+            originX: `${ballAnimationSettings.vertical.originX}%`,
+            originY: `${ballAnimationSettings.vertical.originY}%`,
+          }}
           transition={{
             duration: ballAnimationSettings.duration,
+            delay: 1.5,
             ease: "linear",
             repeat: Infinity,
           }}
         >
           <motion.div
-            initial={{ opacity: 0, scale: 0.1 }}
+            initial={{
+              opacity: 0,
+              scale: 0.25,
+            }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{
-              duration: 1.8,
-              delay: 0.5,
-              ease: [0, 0.71, 0.2, 1.01],
+              duration: 1,
+              delay: 1.5,
+              ease: "easeInOut",
             }}
           >
             <Image
