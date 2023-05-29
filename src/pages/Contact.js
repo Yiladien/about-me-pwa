@@ -5,7 +5,17 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 
-import { Envelope, EnvelopeOpen } from "react-bootstrap-icons";
+import {
+  Envelope,
+  EnvelopeOpen,
+  Phone,
+  PhoneLandscape,
+  PhoneVibrate,
+  PhoneFlip,
+  Telephone,
+  TelephoneOutbound,
+  Messenger,
+} from "react-bootstrap-icons";
 
 const Contact = () => {
   const [hovered, setHovered] = useState({});
@@ -37,9 +47,33 @@ const Contact = () => {
               name="email"
             >
               {hovered.email ? (
-                <EnvelopeOpen style={{ transform: "translateY(-11%)" }} />
+                <EnvelopeOpen style={{ transform: "translateY(-12.5%)" }} />
               ) : (
                 <Envelope />
+              )}
+            </span>
+          </Col>
+          <Col className="d-flex justify-content-center">
+            <span
+              className="icon-button"
+              onMouseEnter={toggleHovered}
+              onMouseLeave={toggleHovered}
+              name="telephone"
+            >
+              {hovered.telephone ? <TelephoneOutbound /> : <Telephone />}
+            </span>
+          </Col>
+          <Col className="d-flex justify-content-center">
+            <span
+              className="icon-button"
+              onMouseEnter={toggleHovered}
+              onMouseLeave={toggleHovered}
+              name="messenger"
+            >
+              {hovered.messenger ? (
+                <Messenger style={{ transform: "rotate(10deg)" }} />
+              ) : (
+                <Messenger />
               )}
             </span>
           </Col>

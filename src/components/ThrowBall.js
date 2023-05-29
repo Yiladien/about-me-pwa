@@ -13,13 +13,13 @@ import {
   // throwballBall50,
   // throwballBall25,
   // throwballBall10,
-  // throwball50Vert,
+  throwball50Vert,
   // throwball25Vert,
   // throwball10Vert,
   throwballNoBall50Vert,
   // throwballNoBall25Vert,
   throwballNoBall10Vert,
-  // throwballBall50Vert,
+  throwballBall50Vert,
   // throwballBall25Vert,
   throwballBall10Vert,
 } from "../assets/images/jumbo/";
@@ -101,7 +101,7 @@ const ThrowBall = () => {
           >
             <Image
               fluid
-              src={throwballBall10Vert}
+              src={throwballBall50Vert}
               alt="madison-olguin"
               //   className=""
             />
@@ -110,7 +110,7 @@ const ThrowBall = () => {
 
         <Image
           fluid
-          src={throwballNoBall10Vert}
+          src={throwballNoBall50Vert}
           alt="basketball"
           className="opacity-0"
         />

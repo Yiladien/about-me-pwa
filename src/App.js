@@ -12,11 +12,8 @@ function App() {
   );
 
   return (
-    <div
-      className="App bg-dark text-white"
-      style={{ height: `${viewHeight}vh` }}
-    >
-      <div className="bg-dark text-white">
+    <div className="App" style={{ height: `${viewHeight}vh` }}>
+      <div className="text-white">
         <Home viewHeight={viewHeight} />
         <About viewHeight={viewHeight} />
         <Contact viewHeight={viewHeight} />
