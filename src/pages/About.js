@@ -11,7 +11,7 @@ import maxPrepIcon from "../assets/images/icons/maxpreps-icon.svg";
 const About = () => {
   return (
     <section
-      className="scroll-container p-0"
+      className="scroll-container"
       style={{
         backgroundImage: `linear-gradient(90deg, rgba(33,37,41, 0.9), rgba(33,37,41, 0.9)),
            url('${bgImage}')`,

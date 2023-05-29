@@ -29,13 +29,20 @@ html {
 } */
 
 .scroll-container {
-  height: 100svh;
+  height: 110vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  scroll-snap-align: center;
+  scroll-snap-align: start;
   padding: 0px;
   overflow: hidden;
+  padding-bottom: 10vh;
+}
+
+.scroll-container:last-of-type {
+  scroll-snap-align: end;
+  padding-top: 10vh;
+  padding-bottom: 0vh;
 }
 
 .page-container {
@@ -45,7 +52,7 @@ html {
 
 .content-container {
   position: relative;
-  max-height: 90svh;
+  /* max-height: 90vh; */
   width: 100%;
   overflow: hidden;
   display: flex;
@@ -143,4 +150,18 @@ html {
   margin-bottom: 0.1em;
   /* margin-left: 0.1em;
   margin-right: 0.1em; */
+}
+
+.icon-button {
+  font-size: 2rem;
+  line-height: 1rem;
+}
+
+.icon-button:hover {
+  /* opacity: 90%; */
+  cursor: pointer;
+}
+
+.icon-button svg {
+  pointer-events: none;
 }

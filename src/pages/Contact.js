@@ -1,15 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 
 //bootstrap
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 
-import { Envelope } from "react-bootstrap-icons";
+import { Envelope, EnvelopeOpen } from "react-bootstrap-icons";
 
 const Contact = () => {
+  const [hovered, setHovered] = useState({});
+
+  const toggleHovered = (event) => {
+    console.log(event.target.attributes.name.value);
+    console.dir(event.target);
+    console.log(Object.keys(event.target));
+
+    const name = event.target.attributes.name.value;
+    setHovered({ [name]: !hovered[name] });
+  };
+
+  console.log(hovered);
   return (
-    <section className="scroll-container p-0">
+    <section className="scroll-container">
       <div className="page-container">
         <Row className="mb-3">
           <Col className="d-flex justify-content-center">
@@ -18,16 +30,18 @@ const Contact = () => {
         </Row>
         <Row className="mb-3">
           <Col className="d-flex justify-content-center">
-            <Button
-              size="sm"
-              className="fs-3"
-              variant="secondary"
-              href="mailto:"
-              target="_blank"
-              rel="noopener noreferrer"
+            <span
+              className="icon-button"
+              onMouseEnter={toggleHovered}
+              onMouseLeave={toggleHovered}
+              name="email"
             >
-              <Envelope />
-            </Button>
+              {hovered.email ? (
+                <EnvelopeOpen style={{ transform: "translateY(-11%)" }} />
+              ) : (
+                <Envelope />
+              )}
+            </span>
           </Col>
         </Row>
         <Row className="mb-3">
