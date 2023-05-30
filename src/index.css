@@ -23,6 +23,10 @@ html {
   --banner-bg-color: #193a71;
 
   scroll-snap-type: y mandatory;
+
+  min-height: calc(100% + env(safe-area-inset-top));
+  padding: env(safe-area-inset-top) env(safe-area-inset-right)
+    env(safe-area-inset-bottom) env(safe-area-inset-left);
 }
 
 /* img {
@@ -31,21 +35,22 @@ html {
 } */
 
 .scroll-container {
-  height: 110vh;
+  height: 100vh;
+  height: calc(100vh - env(safe-area-inset-bottom));
   display: flex;
   justify-content: center;
   align-items: center;
   scroll-snap-align: start;
   padding: 0px;
   overflow: hidden;
-  padding-bottom: 10vh;
+  /* padding-bottom: 10vh; */
   position: relative;
 }
 
 .scroll-container:last-of-type {
   scroll-snap-align: end;
-  padding-top: 10vh;
-  padding-bottom: 0vh;
+  /* padding-top: 10vh;
+  padding-bottom: 0vh; */
 }
 
 .page-container {
