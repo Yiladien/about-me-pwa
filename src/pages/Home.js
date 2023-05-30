@@ -6,7 +6,7 @@ import NameBanner from "../components/NameBanner";
 
 const Home = () => {
   return (
-    <section className="scroll-container p-0">
+    <section className="scroll-container">
       <div className="page-container">
         <div className="content-container">
           <ThrowBall />

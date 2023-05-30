@@ -8,7 +8,7 @@ import { Twitter, Instagram, Facebook } from "react-bootstrap-icons";
 
 const Media = () => {
   return (
-    <section className="scroll-container p-0">
+    <section className="scroll-container">
       <div className="page-container">
         <Row className="mb-3">
           <Col className="d-flex justify-content-center">

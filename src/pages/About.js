@@ -11,15 +11,25 @@ import maxPrepIcon from "../assets/images/icons/maxpreps-icon.svg";
 const About = () => {
   return (
     <section
-      className="scroll-container p-0"
-      style={{
-        backgroundImage: `linear-gradient(90deg, rgba(33,37,41, 0.9), rgba(33,37,41, 0.9)),
-           url('${bgImage}')`,
-        backgroundPosition: `center top`,
-        backgroundRepeat: `no-repeat`,
-        backgroundSize: `cover`,
-      }}
+      className="scroll-container"
+      // style={{
+      //   backgroundImage: `linear-gradient(90deg, rgba(33,37,41, 0.9), rgba(33,37,41, 0.9)),
+      //      url('${bgImage}')`,
+      //   backgroundPosition: `center top`,
+      //   backgroundRepeat: `no-repeat`,
+      //   backgroundSize: `cover`,
+      // }}
     >
+      <div
+        className="bg-absolute"
+        style={{
+          backgroundImage: `radial-gradient(rgba(0,0,0, 0.8), rgba(0,0,0, 0.8), rgba(0,0,0, 1) 90%),
+           url('${bgImage}')`,
+          backgroundPosition: `center top`,
+          backgroundRepeat: `no-repeat`,
+          backgroundSize: `cover`,
+        }}
+      />
       <div className="page-container">
         <Row className="mb-3">
           <Col className="d-flex justify-content-center">
