@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.42af3416.css",
-    "main.js": "/static/js/main.e56c398d.js",
+    "main.css": "/static/css/main.94a1eb92.css",
+    "main.js": "/static/js/main.d082f84c.js",
     "static/js/787.258d0ea0.chunk.js": "/static/js/787.258d0ea0.chunk.js",
     "static/media/throwball-3000x2000.png": "/static/media/throwball-3000x2000.958f1817cf5cce8fd53c.png",
     "static/media/throwball-vert-1358x2000.png": "/static/media/throwball-vert-1358x2000.2eff3cd7ef16f5f1f6a6.png",
@@ -14,6 +14,7 @@
     "static/media/throwball-noball-1000x1500.png": "/static/media/throwball-noball-1000x1500.40cd58e4eef8b6b17287.png",
     "static/media/throwball-vert-noball-679x1000.png": "/static/media/throwball-vert-noball-679x1000.69d51531c13e5e8fba59.png",
     "static/media/sitting-w-ball-bg-vert-100.jpg": "/static/media/sitting-w-ball-bg-vert-100.d59cb67b369e0eee8fd3.jpg",
+    "static/media/qrcode-url-www.madisonolguin.com.png": "/static/media/qrcode-url-www.madisonolguin.com.dc40689dc5ce4e485bc7.png",
     "static/media/throwball-ball-1000x1500.png": "/static/media/throwball-ball-1000x1500.919f608d72c10fbff029.png",
     "static/media/throwball-vert-ball-679x1000.png": "/static/media/throwball-vert-ball-679x1000.19b3fd2ed063552d0503.png",
     "static/media/throwball-600x400.png": "/static/media/throwball-600x400.6e80e5aa4c67558f5227.png",
@@ -25,12 +26,12 @@
     "static/media/throwball-vert-ball-272x400.png": "/static/media/throwball-vert-ball-272x400.18c8e7dd6ab4b817ade2.png",
     "index.html": "/index.html",
     "static/media/maxpreps-icon.svg": "/static/media/maxpreps-icon.e9ca0239295ba0878ad2879a04cb3fd2.svg",
-    "main.42af3416.css.map": "/static/css/main.42af3416.css.map",
-    "main.e56c398d.js.map": "/static/js/main.e56c398d.js.map",
+    "main.94a1eb92.css.map": "/static/css/main.94a1eb92.css.map",
+    "main.d082f84c.js.map": "/static/js/main.d082f84c.js.map",
     "787.258d0ea0.chunk.js.map": "/static/js/787.258d0ea0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.42af3416.css",
-    "static/js/main.e56c398d.js"
+    "static/css/main.94a1eb92.css",
+    "static/js/main.d082f84c.js"
   ]
 }
