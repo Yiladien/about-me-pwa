@@ -9,6 +9,10 @@ body {
   background-color: #000000;
 }
 
+.handwritten-text {
+  font-family: "Caveat", cursive;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -43,12 +47,13 @@ html {
   scroll-snap-align: start;
   padding: 0px;
   overflow: hidden;
-  /* padding-bottom: 10vh; */
+  padding-bottom: 10vh;
   position: relative;
 }
 
 .scroll-container:last-of-type {
-  scroll-snap-align: end;
+  /* scroll-snap-align: end; */
+  padding-bottom: 15svh;
   /* padding-top: 10vh;
   padding-bottom: 0vh; */
 }
@@ -161,11 +166,21 @@ html {
 }
 
 .icon-button:hover {
-  cursor: pointer;
   opacity: 100%;
-  /* color: red; */
 }
 
 .icon-button svg {
   pointer-events: none;
+}
+
+.click-pointer:hover {
+  cursor: pointer;
+}
+
+.max-vh-100 {
+  max-height: 100vh;
+}
+
+.modal-contentbox {
+  background-color: rgba(0, 0, 0, 0.8);
 }

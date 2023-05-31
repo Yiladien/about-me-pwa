@@ -6,6 +6,8 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Media from "./pages/Media";
 import Share from "./pages/Share";
+import Save from "./pages/Save";
+// import ViewHeightForm from "./components/ViewHeightForm";
 // import Example from "./pages/Example";
 
 function App() {
@@ -28,6 +30,8 @@ function App() {
         <Contact />
         <Media />
         <Share />
+        <Save />
+        {/* <ViewHeightForm /> */}
         {/* <Example /> */}
       </div>
     </div>

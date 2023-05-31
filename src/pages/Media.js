@@ -6,45 +6,65 @@ import Col from "react-bootstrap/Col";
 
 import { Twitter, Instagram, Facebook } from "react-bootstrap-icons";
 
+import { motion } from "framer-motion";
+
 const Media = () => {
   return (
     <section className="scroll-container">
       <div className="page-container">
-        <Row className="mb-3">
+        <Row className="mb-5">
           <Col className="d-flex justify-content-center">
             <h1>Media</h1>
           </Col>
         </Row>
         <Row className="mb-3 fs-1 pb-5">
           <Col className="d-flex justify-content-center">
-            <a
-              className="text-reset"
-              href="https://twitter.com/MadisonOlguin21"
-              target="_blank"
-              rel="noopener noreferrer"
+            <motion.div
+              whileHover={{ scale: 2 }}
+              whileTap={{ scale: 2 }}
+              transition={{ type: "spring", stiffness: 400, damping: 17 }}
             >
-              <Twitter />
-            </a>
+              <a
+                className="text-reset"
+                href="https://twitter.com/MadisonOlguin21"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Twitter />
+              </a>
+            </motion.div>
           </Col>
           <Col className="d-flex justify-content-center">
-            <a
-              className="text-reset"
-              href="https://twitter.com/MadisonOlguin21"
-              target="_blank"
-              rel="noopener noreferrer"
+            <motion.div
+              whileHover={{ scale: 2 }}
+              whileTap={{ scale: 2 }}
+              transition={{ type: "spring", stiffness: 400, damping: 17 }}
             >
-              <Instagram />
-            </a>
+              <a
+                className="text-reset"
+                href="https://twitter.com/MadisonOlguin21"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Instagram />
+              </a>
+            </motion.div>
           </Col>
           <Col className="d-flex justify-content-center">
-            <a
-              className="text-reset"
-              href="https://twitter.com/MadisonOlguin21"
-              target="_blank"
-              rel="noopener noreferrer"
+            <motion.div
+              whileHover={{ scale: 2 }}
+              whileTap={{ scale: 2 }}
+              transition={{ type: "spring", stiffness: 400, damping: 17 }}
             >
-              <Facebook />
-            </a>
+              <a
+                className="text-reset"
+                href="https://twitter.com/MadisonOlguin21"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Facebook />
+              </a>
+            </motion.div>
           </Col>
         </Row>
         <Row className="mb-3">
