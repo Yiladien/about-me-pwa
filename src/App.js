@@ -90,6 +90,18 @@ function App() {
     }
   }, [pwaPrompt.showInstall, pwaPrompt.installed]);
 
+  window.addEventListener("appinstalled", () => {
+    console.log("appinstalled fired");
+
+    promptEvent = null;
+
+    setPwaPrompt({
+      ...pwaPrompt,
+      installed: true,
+      showInstall: false,
+    });
+  });
+
   console.log(pwaPrompt);
 
   return (

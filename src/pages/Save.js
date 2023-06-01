@@ -12,24 +12,16 @@ const Save = ({ safariiOSUser, promptEvent, pwaPrompt }) => {
   const handleInstallClick = async (e1) => {
     console.log("handleInstallClick");
     e1.preventDefault();
+    if (safariiOSUser) {
+      return console.log("safari user install click");
+    }
+
     promptEvent.prompt();
 
     const { outcome } = await promptEvent.userChoice;
     console.log(outcome);
 
     promptEvent = null;
-
-    window.addEventListener("appinstalled", () => {
-      console.log("appinstalled fired");
-
-      promptEvent = null;
-
-      setPwaPrompt({
-        ...pwaPrompt,
-        installed: true,
-        showInstall: false,
-      });
-    });
   };
   console.log(pwaPrompt);
 
@@ -39,7 +31,7 @@ const Save = ({ safariiOSUser, promptEvent, pwaPrompt }) => {
       <div className="position-absolute top-0 start-0 border">
         <ul>
           {Object.entries(pwaPrompt).map((entry) => (
-            <li>
+            <li key={entry}>
               {entry[0]}:{" "}
               {entry[1] === undefined
                 ? "undefined"
