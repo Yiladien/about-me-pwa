@@ -8,10 +8,6 @@ import Col from "react-bootstrap/Col";
 import {
   Envelope,
   EnvelopeOpen,
-  Phone,
-  PhoneLandscape,
-  PhoneVibrate,
-  PhoneFlip,
   Telephone,
   TelephoneOutbound,
   Messenger,

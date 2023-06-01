@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 //bootstrap
 import Row from "react-bootstrap/Row";
@@ -7,9 +7,6 @@ import Button from "react-bootstrap/Button";
 
 //bootstrap-icons
 import { Download } from "react-bootstrap-icons";
-
-//to store the beoreinstallPrompt event
-let promptEvent = null;
 
 const Save = ({ safariiOSUser, promptEvent, pwaPrompt }) => {
   const handleInstallClick = async (e1) => {
