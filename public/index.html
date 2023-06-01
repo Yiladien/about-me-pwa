@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta
+      id="meta-viewport"
       name="viewport"
       content="width=device-width, initial-scale=1, viewport-fit=cover"
     />
@@ -12,14 +13,21 @@
       name="description"
       content="Web site created using create-react-app"
     />
-    <!-- PWA to fill behind apple notch & status bar. (also need viewport-fit=cover which is already set in previous meta viewport)-->
+    <!--  -->
+    <!-- iOS PWA to fill behind apple notch. (also need viewport-fit=cover which is already set in previous meta viewport)-->
     <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- black-translucent for transparency behind notch. -->
     <meta
       name="apple-mobile-web-app-status-bar-style"
       content="black-translucent"
     />
     <!-- End pwa apple notch & status bar-->
+    <!--  -->
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <meta name="apple-mobile-web-app-title" content="MaddieOlguin" />
+
+    <link rel="apple-touch-startup-image" href="/launch.jpg" />
+
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/

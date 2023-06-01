@@ -4,77 +4,14 @@ import React, { useEffect, useState } from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
-import Image from "react-bootstrap/Image";
-import Modal from "react-bootstrap/Modal";
 
 //bootstrap-icons
 import { Download } from "react-bootstrap-icons";
 
-import qrcode from "../assets/images/qrcode/qrcode-url-www.madisonolguin.com.png";
-
 //to store the beoreinstallPrompt event
 let promptEvent = null;
 
-const Save = () => {
-  const [pwaPrompt, setPwaPrompt] = useState({
-    launchMode: "",
-    installed: false,
-    showInstall: true,
-    beforeinstallEvent: undefined,
-  });
-
-  const [showModal, setShowModal] = useState(false);
-
-  useEffect(() => {
-    window
-      .matchMedia("(display-mode: standalone)")
-      .addEventListener("change", (evt) => {
-        console.log("display mode change fired");
-        let displayMode = "browser";
-        if (evt.matches) {
-          console.log("evt matches");
-          setPwaPrompt({
-            ...pwaPrompt,
-            launchMode: "standalone",
-            installed: true,
-            showInstall: false,
-          });
-        }
-      });
-  }, []);
-
-  useEffect(() => {
-    const getPWADisplayMode = () => {
-      const isStandalone = window.matchMedia(
-        "(display-mode: standalone)"
-      ).matches;
-      if (document.referrer.startsWith("android-app://")) {
-        return "twa";
-      } else if (navigator.standalone || isStandalone) {
-        return "standalone";
-      }
-
-      return "browser";
-    };
-
-    if (pwaPrompt.showInstall || pwaPrompt.installed) {
-      console.log("beforeinstallPrompt true");
-      window.addEventListener("beforeinstallprompt", (event) => {
-        console.log("beforeinstallPrompt fired");
-        event.preventDefault();
-        console.log(event);
-        promptEvent = event;
-
-        return setPwaPrompt({
-          ...pwaPrompt,
-          launchMode: getPWADisplayMode(),
-          installed: false,
-          showInstall: true,
-        });
-      });
-    }
-  }, [pwaPrompt.showInstall, pwaPrompt.installed]);
-
+const Save = ({ safariiOSUser, promptEvent, pwaPrompt }) => {
   const handleInstallClick = async (e1) => {
     console.log("handleInstallClick");
     e1.preventDefault();
@@ -97,11 +34,143 @@ const Save = () => {
       });
     });
   };
-
   console.log(pwaPrompt);
 
   return (
     <section className="scroll-container">
+      {/* for testing */}
+      <div className="position-absolute top-0 start-0 border">
+        <ul>
+          {Object.entries(pwaPrompt).map((entry) => (
+            <li>
+              {entry[0]}:{" "}
+              {entry[1] === undefined
+                ? "undefined"
+                : entry[1] === null
+                ? "null"
+                : entry[1].toString()}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div
+        style={{
+          position: `absolute`,
+          top: `0px`,
+          left: `0px`,
+          border: `1px dashed green`,
+          height: `100vh`,
+          width: `15vw`,
+          paddingTop: `60%`,
+        }}
+      >
+        100vh
+      </div>
+      <div
+        style={{
+          position: `absolute`,
+          top: `0px`,
+          left: `16vw`,
+          border: `1px dashed green`,
+          height: `100dvh`,
+          width: `15vw`,
+          paddingTop: `60%`,
+        }}
+      >
+        100dvh
+      </div>
+      <div
+        style={{
+          position: `absolute`,
+          top: `0px`,
+          left: `32vw`,
+          border: `1px dashed green`,
+          height: `100svh`,
+          width: `15vw`,
+          paddingTop: `60%`,
+        }}
+      >
+        100svh
+      </div>
+      <div
+        style={{
+          position: `absolute`,
+          top: `0px`,
+          left: `48vw`,
+          border: `1px dashed green`,
+          height: `100lvh`,
+          width: `15vw`,
+          paddingTop: `60%`,
+        }}
+      >
+        100lvh
+      </div>
+      <div
+        style={{
+          position: `absolute`,
+          top: `0px`,
+          right: `0px`,
+          border: `1px dashed red`,
+          height: `10%`,
+          width: `10vw`,
+          paddingTop: `10%`,
+        }}
+      >
+        10%
+      </div>
+      <div
+        style={{
+          position: `absolute`,
+          top: `0px`,
+          right: `0px`,
+          border: `1px dashed red`,
+          height: `25%`,
+          width: `14vw`,
+          paddingTop: `25%`,
+        }}
+      >
+        25%
+      </div>
+      <div
+        style={{
+          position: `absolute`,
+          top: `0px`,
+          right: `0px`,
+          border: `1px dashed red`,
+          height: `50%`,
+          width: `18vw`,
+          paddingTop: `50%`,
+        }}
+      >
+        50%
+      </div>
+      <div
+        style={{
+          position: `absolute`,
+          top: `0px`,
+          right: `0px`,
+          border: `1px dashed red`,
+          height: `100%`,
+          width: `22vw`,
+          paddingTop: `100%`,
+        }}
+      >
+        100%
+      </div>
+      <div
+        className="height-test-env"
+        style={{
+          position: `absolute`,
+          top: `0px`,
+          left: `64vw`,
+          border: `1px dashed blue`,
+          width: `15vw`,
+          paddingTop: `60%`,
+        }}
+      >
+        env
+      </div>
+      {/* end testing */}
       <div className="page-container">
         <Row className="mb-5">
           <Col className="d-flex justify-content-center">
@@ -110,18 +179,16 @@ const Save = () => {
         </Row>
         <Row className="mb-1">
           <Col className="d-flex justify-content-center">
-            {pwaPrompt.showInstall ? (
-              <div>
-                <p className="handwritten-text fs-2">
-                  Save my app to your device.
-                </p>
-              </div>
-            ) : null}
+            <div>
+              <p className="handwritten-text fs-2">
+                Save my app to your device.
+              </p>
+            </div>
           </Col>
         </Row>
-        <Row className="mb-3">
-          <Col className="d-flex justify-content-center">
-            {pwaPrompt.showInstall ? (
+        {safariiOSUser ? (
+          <Row className="mb-3">
+            <Col className="d-flex justify-content-center">
               <Button
                 id="installButton"
                 name="installButton"
@@ -131,9 +198,24 @@ const Save = () => {
                 Install {` `}
                 <Download />
               </Button>
-            ) : null}
-          </Col>
-        </Row>
+            </Col>
+          </Row>
+        ) : null}
+        {!safariiOSUser ? (
+          <Row className="mb-3 position-absolute bg-white bottom-0 start-50 translate-middle-x">
+            <Col className="d-flex justify-content-center">
+              <Button
+                id="installButton"
+                name="installButton"
+                variant="secondary"
+                onClick={handleInstallClick}
+              >
+                Install {` `}
+                <Download />
+              </Button>
+            </Col>
+          </Row>
+        ) : null}
       </div>
     </section>
   );

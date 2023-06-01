@@ -24,3 +24,21 @@ serviceWorkerRegistration.register();
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+// -- CUSTOM --
+// If user is using as standalone pwa, disabling pinch-zoom so the pwa mimics an installed application.
+
+window
+  .matchMedia("(display-mode: standalone)")
+  .addEventListener("change", (evt) => {
+    console.log("display mode changed");
+    if (evt.matches) {
+      console.log("evt matches 'standalone'");
+      document
+        .getElementById("meta-viewport")
+        .setAttribute(
+          "content",
+          "width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no,"
+        );
+    }
+  });

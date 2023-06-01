@@ -36,10 +36,11 @@ const Share = () => {
         </Row>
       </div>
       <Modal
+        className="qrcode-modal"
         centered
         fullscreen
         show={showModal}
-        contentClassName="modal-contentbox"
+        contentClassName="bg-transparent"
       >
         <Modal.Body
           className="p-0 text-center bg-dark bg-opacity-10 d-flex align-items-center justify-content-center"
