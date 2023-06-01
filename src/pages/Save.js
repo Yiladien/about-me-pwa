@@ -8,7 +8,7 @@ import Button from "react-bootstrap/Button";
 //bootstrap-icons
 import { Download } from "react-bootstrap-icons";
 
-const Save = ({ safariiOSUser, promptEvent, pwaPrompt }) => {
+const Save = ({ safariiOSUser, promptEvent }) => {
   const handleInstallClick = async (e1) => {
     console.log("handleInstallClick");
     e1.preventDefault();
@@ -23,143 +23,9 @@ const Save = ({ safariiOSUser, promptEvent, pwaPrompt }) => {
 
     promptEvent = null;
   };
-  console.log(pwaPrompt);
 
   return (
     <section className="scroll-container">
-      {/* for testing */}
-      <div className="position-absolute top-0 start-0 border">
-        <ul>
-          {Object.entries(pwaPrompt).map((entry) => (
-            <li key={entry}>
-              {entry[0]}:{" "}
-              {entry[1] === undefined
-                ? "undefined"
-                : entry[1] === null
-                ? "null"
-                : entry[1].toString()}
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div
-        style={{
-          position: `absolute`,
-          top: `0px`,
-          left: `0px`,
-          border: `1px dashed green`,
-          height: `100vh`,
-          width: `15vw`,
-          paddingTop: `60%`,
-        }}
-      >
-        100vh
-      </div>
-      <div
-        style={{
-          position: `absolute`,
-          top: `0px`,
-          left: `16vw`,
-          border: `1px dashed green`,
-          height: `100dvh`,
-          width: `15vw`,
-          paddingTop: `60%`,
-        }}
-      >
-        100dvh
-      </div>
-      <div
-        style={{
-          position: `absolute`,
-          top: `0px`,
-          left: `32vw`,
-          border: `1px dashed green`,
-          height: `100svh`,
-          width: `15vw`,
-          paddingTop: `60%`,
-        }}
-      >
-        100svh
-      </div>
-      <div
-        style={{
-          position: `absolute`,
-          top: `0px`,
-          left: `48vw`,
-          border: `1px dashed green`,
-          height: `100lvh`,
-          width: `15vw`,
-          paddingTop: `60%`,
-        }}
-      >
-        100lvh
-      </div>
-      <div
-        style={{
-          position: `absolute`,
-          top: `0px`,
-          right: `0px`,
-          border: `1px dashed red`,
-          height: `10%`,
-          width: `10vw`,
-          paddingTop: `10%`,
-        }}
-      >
-        10%
-      </div>
-      <div
-        style={{
-          position: `absolute`,
-          top: `0px`,
-          right: `0px`,
-          border: `1px dashed red`,
-          height: `25%`,
-          width: `14vw`,
-          paddingTop: `25%`,
-        }}
-      >
-        25%
-      </div>
-      <div
-        style={{
-          position: `absolute`,
-          top: `0px`,
-          right: `0px`,
-          border: `1px dashed red`,
-          height: `50%`,
-          width: `18vw`,
-          paddingTop: `50%`,
-        }}
-      >
-        50%
-      </div>
-      <div
-        style={{
-          position: `absolute`,
-          top: `0px`,
-          right: `0px`,
-          border: `1px dashed red`,
-          height: `100%`,
-          width: `22vw`,
-          paddingTop: `100%`,
-        }}
-      >
-        100%
-      </div>
-      <div
-        className="height-test-env"
-        style={{
-          position: `absolute`,
-          top: `0px`,
-          left: `64vw`,
-          border: `1px dashed blue`,
-          width: `15vw`,
-          paddingTop: `60%`,
-        }}
-      >
-        env
-      </div>
-      {/* end testing */}
       <div className="page-container">
         <Row className="mb-5">
           <Col className="d-flex justify-content-center">

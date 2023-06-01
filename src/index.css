@@ -44,11 +44,12 @@ html {
   align-items: center;
   padding: 0px;
   overflow: hidden;
-  padding-bottom: 12vh;
+  /* padding-bottom: 12%; */
   position: relative;
 
-  scroll-snap-align: center;
+  scroll-snap-align: start;
   scroll-snap-stop: always;
+  box-shadow: inset 0px 0px 2px 2px white;
 }
 
 .height-test-env {
@@ -57,7 +58,7 @@ html {
 
 .scroll-container:last-of-type {
   /* scroll-snap-align: end; */
-  padding-bottom: 15svh;
+  padding-bottom: 0;
   /* padding-top: 10vh;
   padding-bottom: 0vh; */
 }
