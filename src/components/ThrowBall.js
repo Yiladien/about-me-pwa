@@ -40,9 +40,9 @@ const ThrowBall = () => {
   };
 
   return (
-    <div className="position-relative d-flex justify-content-center">
+    <div className="position-relative">
       <motion.div
-        className="position-relative"
+        className="position-relative throwball-box"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 1.1 }}
         animate={{ scale: 1.0 }}

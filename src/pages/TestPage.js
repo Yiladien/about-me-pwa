@@ -16,53 +16,47 @@ const TestPage = ({ safariiOSUser, pwaPrompt, page }) => {
 
   const [formStyle, setFormStyle] = useState({
     heightNum: 100,
-    sectionHeightUnit: "vh",
+    heightUnitType: "vh",
     boxShadow: true,
+    padding: 0,
   });
 
   const handleStyleChange = (event) => {
     event.preventDefault();
 
-    let vhType;
-    let heightNumber;
-    let boxOutline;
+    let { heightUnitType, heightNum, boxShadow } = formStyle;
 
-    if (event.target.name === "heightNum") {
-      heightNumber = event.target.heightNum.value;
-      vhType = formStyle.sectionHeightUnit;
-      boxOutline = formStyle.boxShadow;
-    } else if (event.target.dataset.type === "sectionHeightUnit") {
-      heightNumber = formStyle.heightNum;
-      vhType = event.target.innerText;
-      boxOutline = formStyle.boxShadow;
-    } else if (event.target.dataset.type === "boxShadow") {
-      heightNumber = formStyle.heightNum;
-      vhType = formStyle.sectionHeightUnit;
-      boxOutline = !formStyle.boxShadow;
-    }
-
-    // heightNum form
+    // form input box submit
     // console.log(event.target.name);
     // console.log(event.target.heightNum.value);
 
-    // vh buttons
+    // buttons
     // console.dir(event.target.innerText);
     // console.log(event.target.dataset.type);
 
+    if (event.target.name === "heightNum") {
+      heightNum = event.target.heightNum.value;
+    } else if (event.target.dataset.type === "heightUnitType") {
+      heightUnitType = event.target.innerText;
+    } else if (event.target.dataset.type === "boxShadow") {
+      boxShadow = !boxShadow;
+    }
+
+    // updating DOM
     const scrollContainers = document.querySelectorAll(".scroll-container");
 
     scrollContainers.forEach((sc) => {
-      sc.style.height = `${heightNumber}${vhType}`;
+      sc.style.height = `${heightNum}${heightUnitType}`;
       sc.style.boxShadow = `${
-        boxOutline ? "inset 0px 0px 2px 2px white" : "none"
+        boxShadow ? "inset 0px 0px 2px 2px white" : "none"
       }`;
     });
 
     setFormStyle({
       ...formStyle,
-      sectionHeightUnit: vhType,
-      heightNum: heightNumber,
-      boxShadow: boxOutline,
+      heightUnitType: heightUnitType,
+      heightNum: heightNum,
+      boxShadow: boxShadow,
     });
   };
 
@@ -173,11 +167,12 @@ const TestPage = ({ safariiOSUser, pwaPrompt, page }) => {
             }}
             hidden={!toggleStyle.changeStyle ? "hidden" : null}
           >
+            {/* view height row */}
             <div>
               <span>Height Unit: </span>
               <Button
                 name="vh"
-                data-type="sectionHeightUnit"
+                data-type="heightUnitType"
                 size="sm"
                 variant="secondary m-2"
                 style={{
@@ -189,7 +184,7 @@ const TestPage = ({ safariiOSUser, pwaPrompt, page }) => {
               </Button>
               <Button
                 name="svh"
-                data-type="sectionHeightUnit"
+                data-type="heightUnitType"
                 size="sm"
                 variant="secondary m-2"
                 style={{
@@ -201,7 +196,7 @@ const TestPage = ({ safariiOSUser, pwaPrompt, page }) => {
               </Button>
               <Button
                 name="dvh"
-                data-type="sectionHeightUnit"
+                data-type="heightUnitType"
                 size="sm"
                 variant="secondary m-2"
                 style={{
@@ -213,7 +208,7 @@ const TestPage = ({ safariiOSUser, pwaPrompt, page }) => {
               </Button>
               <Button
                 name="lvh"
-                data-type="sectionHeightUnit"
+                data-type="heightUnitType"
                 size="sm"
                 variant="secondary m-2"
                 style={{
@@ -224,6 +219,7 @@ const TestPage = ({ safariiOSUser, pwaPrompt, page }) => {
                 lvh
               </Button>
             </div>
+            {/* heightNum row */}
             <div>
               <Form
                 className="m-2"
@@ -250,6 +246,7 @@ const TestPage = ({ safariiOSUser, pwaPrompt, page }) => {
                 </Form.Group>
               </Form>
             </div>
+            {/* element outline row */}
             <div>
               <span>Section Outline: </span>
               <Button

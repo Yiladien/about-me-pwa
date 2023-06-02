@@ -106,55 +106,53 @@ function App() {
   console.log(pwaPrompt);
 
   return (
-    <div className="App">
-      <div className="text-white">
-        <Home />
-        <About />
-        <Contact />
-        <Media />
-        <Share />
-        {pwaPrompt.launchMode !== "standalone" && (
-          <Save
-            safariiOSUser={pwaPrompt.safariiOSUser}
-            promptEvent={promptEvent}
-          />
-        )}
-        <TestPage
+    <div className="App text-white">
+      <Home />
+      <About />
+      <Contact />
+      <Media />
+      <Share />
+      {pwaPrompt.launchMode !== "standalone" && (
+        <Save
           safariiOSUser={pwaPrompt.safariiOSUser}
-          pwaPrompt={pwaPrompt}
-          page={1}
+          promptEvent={promptEvent}
         />
-        <TestPage
-          safariiOSUser={pwaPrompt.safariiOSUser}
-          pwaPrompt={pwaPrompt}
-          page={2}
-        />
-        <TestPage
-          safariiOSUser={pwaPrompt.safariiOSUser}
-          pwaPrompt={pwaPrompt}
-          page={3}
-        />
-        <TestPage
-          safariiOSUser={pwaPrompt.safariiOSUser}
-          pwaPrompt={pwaPrompt}
-          page={4}
-        />
-        <TestPage
-          safariiOSUser={pwaPrompt.safariiOSUser}
-          pwaPrompt={pwaPrompt}
-          page={5}
-        />
-        <TestPage
-          safariiOSUser={pwaPrompt.safariiOSUser}
-          pwaPrompt={pwaPrompt}
-          page={6}
-        />
-        <TestPage
-          safariiOSUser={pwaPrompt.safariiOSUser}
-          pwaPrompt={pwaPrompt}
-          page={7}
-        />
-      </div>
+      )}
+      <TestPage
+        safariiOSUser={pwaPrompt.safariiOSUser}
+        pwaPrompt={pwaPrompt}
+        page={1}
+      />
+      <TestPage
+        safariiOSUser={pwaPrompt.safariiOSUser}
+        pwaPrompt={pwaPrompt}
+        page={2}
+      />
+      <TestPage
+        safariiOSUser={pwaPrompt.safariiOSUser}
+        pwaPrompt={pwaPrompt}
+        page={3}
+      />
+      <TestPage
+        safariiOSUser={pwaPrompt.safariiOSUser}
+        pwaPrompt={pwaPrompt}
+        page={4}
+      />
+      <TestPage
+        safariiOSUser={pwaPrompt.safariiOSUser}
+        pwaPrompt={pwaPrompt}
+        page={5}
+      />
+      <TestPage
+        safariiOSUser={pwaPrompt.safariiOSUser}
+        pwaPrompt={pwaPrompt}
+        page={6}
+      />
+      <TestPage
+        safariiOSUser={pwaPrompt.safariiOSUser}
+        pwaPrompt={pwaPrompt}
+        page={7}
+      />
     </div>
   );
 }
