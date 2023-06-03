@@ -48,8 +48,8 @@ code {
   height: 100vh;
 
   padding: 30% 0%;
-  /* padding: env(safe-area-inset-top) env(safe-area-inset-right)
-    env(safe-area-inset-bottom) env(safe-area-inset-left); */
+  padding: env(safe-area-inset-top) env(safe-area-inset-right)
+    env(safe-area-inset-bottom) env(safe-area-inset-left);
 
   /* display: flex;
   justify-content: center;
@@ -60,20 +60,25 @@ code {
 
   scroll-snap-align: start;
   scroll-snap-stop: always;
-  box-shadow: inset 0px 0px 2px 2px white;
+  /* box-shadow: inset 0px 0px 2px 2px white; */
 }
 
 .height-test-env {
-  height: calc(100vh - env(safe-area-inset-bottom));
+  height: 100vh;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right)
+    env(safe-area-inset-bottom) env(safe-area-inset-left);
+  /* padding: 20%; */
+  display: relative;
 }
 
 .page-container {
   display: block;
+  position: relative;
   height: 100%;
   max-height: 100%;
   max-width: 100%;
   overflow: hidden;
-  box-shadow: inset 0px 0px 2px 2px green;
+  /* box-shadow: inset 0px 0px 2px 2px green; */
 }
 
 .content-container {
@@ -242,3 +247,31 @@ code {
   filter: drop-shadow(10px 10px 10px #000000);
 }
 /* END - UTILITY */
+
+.test-page .btn,
+.test-page input {
+  font-size: 0.75rem;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+  min-height: auto;
+}
+
+.test-page .input-group-text,
+.test-page .form-control-color,
+.test-page .form-control-sm {
+  font-size: 0.75rem;
+}
+
+.test-page .form-control-color {
+  font-size: 0.75rem;
+  max-width: 2.35rem;
+}
+
+.test-page .form-check input {
+  margin-top: 0.375rem;
+}
+
+.test-page .form-switch input {
+  font-size: 0.875rem;
+  margin-top: 0.375rem;
+}

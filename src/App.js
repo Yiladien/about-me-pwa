@@ -26,6 +26,7 @@ function App() {
     safariiOSUser: /^((?!chrome|android|Mac).)*Version\/[\d.]+.*Safari/i.test(
       navigator.userAgent
     ),
+    userAgent: navigator.userAgent,
   });
 
   useEffect(() => {
