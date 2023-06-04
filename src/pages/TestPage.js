@@ -25,8 +25,12 @@ const TestPage = ({ safariiOSUser, pwaPrompt, page }) => {
 
   const handleStyleChange = (event) => {
     event.preventDefault();
-    console.log(event);
+    // console.log(event);
     console.log(event.target.idClassRadio.value);
+    console.log(event.target.idClassName.value);
+    // console.log(event.target.name);
+    // console.log(event.target.paddingTop.value);
+    // console.log(event.target.paddingBottom.value);
 
     if (event.target?.dataset?.type === "heightUnitType") {
       const scrollContainers = document.querySelectorAll(".scroll-container");
@@ -38,88 +42,54 @@ const TestPage = ({ safariiOSUser, pwaPrompt, page }) => {
       return;
     }
 
-    if (
-      (!event.target?.idRadio && !event.target?.classRadio) ||
-      !event.target?.idClassName
-    ) {
+    if (!event.target.idClassRadio.value || !event.target.idClassName.value) {
       return;
     }
 
     let containerEl = [];
-    if (event.target?.idRadio) {
-      containerEl = document.getElementById(event.target.idClassName);
+    if (event.target.idClassRadio.value === "idRadio") {
+      containerEl = [document.getElementById(event.target.idClassName.value)];
     } else {
-      containerEl = [document.querySelectorAll(`.${event.target.idClassName}`)];
+      containerEl = document.querySelectorAll(
+        `.${event.target.idClassName.value}`
+      );
     }
 
     if (!containerEl) {
+      console.log("containerEl is false");
       return;
     } else {
+      console.log(containerEl);
       containerEl.forEach((el) => {
-        event.target?.height && (el.style.height = `${event.target.height}`);
+        console.log(el);
+        [
+          "height",
+          "paddingTop",
+          "paddingBottom",
+          "paddingRight",
+          "paddingLeft",
+          "boxShadow",
+        ].forEach((style) => {
+          console.log(style);
+          console.log(event.target[style].value);
 
-        if (event.target["padding-top"]) {
-          el.style.paddingTop = `${event.target["padding-top"]}`;
-        }
-        if (event.target["padding-bottom"]) {
-          el.style.paddingBottom = `${event.target["padding-bottom"]}`;
-        }
+          if (!event.target[style] === "") {
+            return;
+          }
 
-        if (event.target["padding-right"]) {
-          el.style.paddingRight = `${event.target["padding-right"]}`;
-        }
-        if (event.target["padding-left"]) {
-          el.style.paddingLeft = `${event.target["padding-left"]}`;
-        }
+          if (style === "boxShadow") {
+            console.log(
+              `inset 0px 0px 0px ${event.target.boxShadow.value}px ${event.target.boxShadowColor.value}`
+            );
+            el.style.boxShadow = `inset 0px 0px 0px ${event.target.boxShadow.value}px ${event.target.boxShadowColor.value}`;
+          } else {
+            el.style[style] = event.target[style].value;
+          }
+        });
 
-        if (event.target["box-shadow-size"]) {
-          el.style.boxShadow = `inset 0px 0px 0px ${event.target["box-shadow-size"]} ${event.target["box-shadow-color"]}`;
-        }
+        // }
       });
     }
-
-    // let { heightUnitType, heightNum, boxShadow } = formStyle;
-
-    // form input box submit
-    // console.log(event.target.name);
-    // console.log(event.target.heightNum.value);
-
-    // buttons
-    // console.dir(event.target.innerText);
-    // console.log(event.target.dataset.type);
-
-    // if (event.target.name === "heightNum") {
-    //   heightNum = event.target.heightNum.value;
-    // } else if (event.target.dataset.type === "heightUnitType") {
-    //   heightUnitType = event.target.innerText;
-    // } else if (event.target.dataset.type === "boxShadow") {
-    //   boxShadow = !boxShadow;
-    // }
-
-    // updating DOM
-    // const scrollContainers = document.querySelectorAll(".scroll-container");
-    // const pageContainers = document.querySelectorAll(".page-container");
-
-    // scrollContainers.forEach((sc) => {
-    //   sc.style.height = `${heightNum}${heightUnitType}`;
-    //   sc.style.boxShadow = `${
-    //     boxShadow ? "inset 0px 0px 2px 2px white" : "none"
-    //   }`;
-    // });
-
-    // pageContainers.forEach((sc) => {
-    //   sc.style.height = `${heightNum}${heightUnitType}`;
-    //   sc.style.boxShadow = `${
-    //     boxShadow ? "inset 0px 0px 2px 2px green" : "none"
-    //   }`;
-    // });
-
-    // setFormStyle({
-    //   ...formStyle,
-    //   heightUnitType: heightUnitType,
-    //   heightNum: heightNum,
-    //   boxShadow: boxShadow,
-    // });
   };
 
   const PwaComponent = () => {
@@ -249,7 +219,7 @@ const TestPage = ({ safariiOSUser, pwaPrompt, page }) => {
         </Row>
         {/* heightNum row */}
         <div className="border-top pt-2">
-          <Form className="" onSubmit={handleStyleChange} name="heightNum">
+          <Form className="" onSubmit={handleStyleChange} name="styleForm">
             <Row>
               <Col xs={{ span: 8, offset: 4 }} className="pe-0">
                 <h6>Update id or class styles</h6>
@@ -264,6 +234,7 @@ const TestPage = ({ safariiOSUser, pwaPrompt, page }) => {
                   name="idClassRadio"
                   type="radio"
                   id={`idRadio`}
+                  value="idRadio"
                 />
                 <Form.Check
                   inline
@@ -271,6 +242,7 @@ const TestPage = ({ safariiOSUser, pwaPrompt, page }) => {
                   name="idClassRadio"
                   type="radio"
                   id={`classRadio`}
+                  value="classRadio"
                 />
               </Col>
             </Form.Group>
@@ -283,7 +255,7 @@ const TestPage = ({ safariiOSUser, pwaPrompt, page }) => {
                   size="sm"
                   type="text"
                   name="idClassName"
-                  placeholder="section-container"
+                  placeholder="scroll-container"
                 />
               </Col>
             </Form.Group>
@@ -308,7 +280,7 @@ const TestPage = ({ safariiOSUser, pwaPrompt, page }) => {
                 <Form.Control
                   size="sm"
                   type="text"
-                  name="padding-top"
+                  name="paddingTop"
                   placeholder={"0%"}
                 />
               </Col>
@@ -321,7 +293,7 @@ const TestPage = ({ safariiOSUser, pwaPrompt, page }) => {
                 <Form.Control
                   size="sm"
                   type="text"
-                  name="padding-bottom"
+                  name="paddingBottom"
                   placeholder={"0%"}
                 />
               </Col>
@@ -334,7 +306,7 @@ const TestPage = ({ safariiOSUser, pwaPrompt, page }) => {
                 <Form.Control
                   size="sm"
                   type="text"
-                  name="padding-right"
+                  name="paddingRight"
                   placeholder={"0%"}
                 />
               </Col>
@@ -347,7 +319,7 @@ const TestPage = ({ safariiOSUser, pwaPrompt, page }) => {
                 <Form.Control
                   size="sm"
                   type="text"
-                  name="padding-left"
+                  name="paddingLeft"
                   placeholder={"0%"}
                 />
               </Col>
@@ -361,14 +333,14 @@ const TestPage = ({ safariiOSUser, pwaPrompt, page }) => {
                   <Form.Control
                     size="sm"
                     type="text"
-                    name="box-shadow-size"
+                    name="boxShadow"
                     placeholder={"1"}
                   />
                   <InputGroup.Text>px</InputGroup.Text>
                   <Form.Control
                     size="sm"
                     type="color"
-                    name="box-shadow-color"
+                    name="boxShadowColor"
                     defaultValue={"#AF3AFD"}
                   />
                 </InputGroup>

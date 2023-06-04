@@ -40,82 +40,80 @@ const ThrowBall = () => {
   };
 
   return (
-    <div className="position-relative">
+    <motion.div
+      className="position-relative throwball-box"
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 1.1 }}
+      animate={{ scale: 1.0 }}
+      transition={{ type: "spring", stiffness: 400, damping: 17 }}
+    >
       <motion.div
-        className="position-relative throwball-box"
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 1.1 }}
-        animate={{ scale: 1.0 }}
-        transition={{ type: "spring", stiffness: 400, damping: 17 }}
+        className="position-absolute"
+        initial={{ opacity: 0, scale: 0.25 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{
+          duration: 0.8,
+          delay: 1.5,
+          ease: "easeInOut",
+        }}
+      >
+        <Image
+          fluid
+          src={throwballNoBall50Vert}
+          alt="madison-olguin"
+          className="drop-shadow"
+        />
+      </motion.div>
+
+      <motion.div
+        className="position-absolute"
+        // style={{
+        //   transformOrigin: `${ballAnimationSettings.vertical.originX}% ${ballAnimationSettings.vertical.originY}%`,
+        // }}
+        initial={{
+          originX: `${ballAnimationSettings.vertical.originX}%`,
+          originY: `${ballAnimationSettings.vertical.originY}%`,
+        }}
+        animate={{
+          rotate: -360,
+          originX: `${ballAnimationSettings.vertical.originX}%`,
+          originY: `${ballAnimationSettings.vertical.originY}%`,
+        }}
+        transition={{
+          duration: ballAnimationSettings.duration,
+          delay: 1.5,
+          ease: "linear",
+          repeat: Infinity,
+        }}
       >
         <motion.div
-          className="position-absolute"
-          initial={{ opacity: 0, scale: 0.25 }}
+          initial={{
+            opacity: 0,
+            scale: 0.25,
+          }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{
-            duration: 0.8,
+            duration: 1,
             delay: 1.5,
             ease: "easeInOut",
           }}
         >
           <Image
             fluid
-            src={throwballNoBall50Vert}
+            src={throwballBall50Vert}
             alt="madison-olguin"
-            className="drop-shadow"
+            //   className=""
           />
         </motion.div>
-
-        <motion.div
-          className="position-absolute"
-          // style={{
-          //   transformOrigin: `${ballAnimationSettings.vertical.originX}% ${ballAnimationSettings.vertical.originY}%`,
-          // }}
-          initial={{
-            originX: `${ballAnimationSettings.vertical.originX}%`,
-            originY: `${ballAnimationSettings.vertical.originY}%`,
-          }}
-          animate={{
-            rotate: -360,
-            originX: `${ballAnimationSettings.vertical.originX}%`,
-            originY: `${ballAnimationSettings.vertical.originY}%`,
-          }}
-          transition={{
-            duration: ballAnimationSettings.duration,
-            delay: 1.5,
-            ease: "linear",
-            repeat: Infinity,
-          }}
-        >
-          <motion.div
-            initial={{
-              opacity: 0,
-              scale: 0.25,
-            }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{
-              duration: 1,
-              delay: 1.5,
-              ease: "easeInOut",
-            }}
-          >
-            <Image
-              fluid
-              src={throwballBall50Vert}
-              alt="madison-olguin"
-              //   className=""
-            />
-          </motion.div>
-        </motion.div>
-
-        <Image
-          fluid
-          src={throwballNoBall50Vert}
-          alt="basketball"
-          className="opacity-0"
-        />
       </motion.div>
-    </div>
+
+      <Image
+        fluid
+        src={throwballNoBall50Vert}
+        alt="basketball"
+        className="opacity-0"
+      />
+    </motion.div>
   );
 };
 
