@@ -29,6 +29,8 @@ import {
 
 import { motion } from "framer-motion";
 
+import NameBanner from "./NameBanner";
+
 const ThrowBall = () => {
   // const ballAnimationSettings = {
   //   duration: 2,
@@ -54,6 +56,12 @@ const ThrowBall = () => {
     <div id="full-container">
       <div id="image-container">
         <Image
+          id="throw-no-ball-transparent"
+          src={throwballNoBall50Vert}
+          alt="madison-olguin"
+          className="drop-shadow"
+        />
+        <Image
           id="throw-no-ball"
           src={throwballNoBall50Vert}
           alt="madison-olguin"
@@ -65,6 +73,7 @@ const ThrowBall = () => {
           alt="madison-olguin"
           className="drop-shadow"
         />
+        <NameBanner />
       </div>
     </div>
   );

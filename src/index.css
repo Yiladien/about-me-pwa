@@ -20,81 +20,25 @@ code {
     monospace;
 }
 
-#full-container {
-  box-shadow: inset 0px 0px 0px 10px hotpink;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  flex-direction: column;
-  flex-grow: 0;
-}
-
-#image-container {
-  box-shadow: inset 0px 0px 0px 7px cyan;
-  /* margin-inline: auto; */
-  position: relative;
-  display: inline-flex;
-
-  max-width: 100%;
-  max-height: 100%;
-}
-
-#throw-no-ball {
-  max-width: 100%;
-  max-height: 100%;
-  /* position: absolute; */
-  top: 0;
-  left: 0;
-  box-shadow: inset 0px 0px 0px 4px greenyellow;
-}
-
-#ball {
-  animation: indefinite-spin 5s infinite linear;
-  max-width: 100%;
-  max-height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  box-shadow: inset 0px 0px 0px 2px blueviolet;
-  transform: rotate(360deg);
-  transform-origin: 26.3% 22.2%;
-}
-
-@keyframes indefinite-spin {
-  0% {
-    rotate: 0deg;
-  }
-  100% {
-    rotate: 360deg;
-  }
-}
-
 .scroll-container {
   height: 100vh;
 
-  padding: 15% 0% 15% 0%;
-  /* padding: env(safe-area-inset-top) env(safe-area-inset-right)
-    env(safe-area-inset-bottom) env(safe-area-inset-left); */
+  /* padding: 15% 0% 15% 0%; */
+  padding: calc(env(safe-area-inset-top, 0vh) + 10vh) env(safe-area-inset-right)
+    calc(env(safe-area-inset-bottom, 0vh) + 10vh) env(safe-area-inset-left);
 
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
   overflow: hidden;
-  /* padding-bottom: 12%; */
   position: relative;
 
   scroll-snap-align: start;
   scroll-snap-stop: always;
-  /* box-shadow: inset 0px 0px 2px 2px white; */
 }
 
 .height-test-env {
   height: 100vh;
   padding: env(safe-area-inset-top) env(safe-area-inset-right)
     env(safe-area-inset-bottom) env(safe-area-inset-left);
-  /* padding: 20%; */
+
   display: relative;
 }
 
@@ -109,30 +53,135 @@ code {
 }
 
 .content-container {
-  /* width: 100%; */
-  /* max-height: 80vh; */
-  /* overflow: hidden; */
-  /* display: flex; */
-  /* flex-direction: column; */
-
-  /*   
-  position: relative;
-  max-height: 100%;
-  padding-left: 5%;
-  padding-right: 5%;
-  box-shadow: inset 0px 0px 2px 2px red; */
-
   width: 100%;
-  /* Set the width of the container */
   height: 100%;
-  /* Set initial height to 0 for aspect ratio calculation */
-  /* padding-bottom: 60%;  */
-  /* Set the desired aspect ratio (e.g., 60% for a 3:2 aspect ratio) */
   position: relative;
   /* Create a positioning context for the image */
   /* overflow: hidden;  */
   /* Hide any overflow beyond the container */
-  box-shadow: inset 0px 0px 0px 2px rgba(255, 255, 255, 0.5);
+  /* box-shadow: inset 0px 0px 0px 2px rgba(255, 255, 255, 0.5); */
+}
+
+#full-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  flex-grow: 0;
+  position: relative;
+  /* box-shadow: inset 0px 0px 0px 10px hotpink; */
+}
+
+#image-container {
+  position: relative;
+  display: inline-flex;
+  max-width: 100%;
+  max-height: 100%;
+
+  padding-bottom: 5vh;
+  overflow: hidden;
+  /* box-shadow: inset 0px 0px 0px 7px cyan; */
+}
+
+#throw-no-ball-transparent {
+  max-width: 100%;
+  max-height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  /* box-shadow: inset 0px 0px 0px 4px greenyellow; */
+}
+
+#throw-no-ball {
+  max-width: 100%;
+  max-height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  /* box-shadow: inset 0px 0px 0px 4px greenyellow; */
+}
+
+#ball {
+  animation: indefinite-spin 30s infinite linear;
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: 26.3% 22.2%;
+  /* box-shadow: inset 0px 0px 0px 2px blueviolet; */
+}
+
+#image-container #banner {
+  max-width: 100%;
+  width: 90%;
+  height: 20%;
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  transform: translate(-50%, -15%);
+  /* box-shadow: inset 0px 0px 0px 10px lightcoral; */
+}
+
+#banner-background {
+  width: 90%;
+  height: 100%;
+  margin-inline: auto;
+  transform: skew(-20deg);
+  background-color: var(--banner-bg-color);
+  filter: drop-shadow(10px 10px 10px #000000);
+}
+
+#banner-background-dark {
+  width: 100vw;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -0%);
+  background-color: rgb(0, 0, 0, 0.8);
+  filter: drop-shadow(10px 10px 10px #000000);
+}
+
+#svg-letter-m,
+#svg-letters-adison {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: -10%;
+  left: -8%;
+  filter: drop-shadow(0.25em 0.25em 0.25em #000000);
+  /* box-shadow: inset 0px 0px 0px 7px orange; */
+}
+
+#svg-letters-olguin {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 35%;
+  left: 32%;
+  filter: drop-shadow(0.25em 0.25em 0.25em #000000);
+  /* box-shadow: inset 0px 0px 0px 4px silver; */
+}
+/* 
+#svg-letters-adison {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  box-shadow: inset 0px 0px 0px 2px yellow;
+} */
+
+@keyframes indefinite-spin {
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 360deg;
+  }
 }
 
 .throwball-box {
@@ -225,9 +274,9 @@ code {
 }
 
 .banner-bg {
-  background-color: var(--banner-bg-color);
   width: 80vw;
   max-width: 350px;
+  background-color: var(--banner-bg-color);
   filter: drop-shadow(10px 10px 10px #000000);
   position: absolute;
   left: 50%;
