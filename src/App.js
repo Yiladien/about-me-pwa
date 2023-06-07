@@ -23,7 +23,7 @@ function App() {
     installed: false,
     showInstall: true,
     beforeinstallEvent: null,
-    safariiOSUser: /^((?!chrome|android|Mac).)*Version\/[\d.]+.*Safari/i.test(
+    safariiOSUser: /(iPhone|iPod|iPad).*Mobile\/.*Safari\//i.test(
       navigator.userAgent
     ),
     userAgent: navigator.userAgent,
@@ -45,10 +45,9 @@ function App() {
             launchMode: "standalone",
             installed: true,
             showInstall: false,
-            safariiOSUser:
-              /^((?!chrome|android|Mac).)*Version\/[\d.]+.*Safari/i.test(
-                navigator.userAgent
-              ),
+            safariiOSUser: /(iPhone|iPod|iPad).*Mobile\/.*Safari\//i.test(
+              navigator.userAgent
+            ),
           });
         }
       });

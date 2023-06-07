@@ -46,7 +46,7 @@ const Share = () => {
           className="p-0 text-center bg-dark bg-opacity-10 d-flex align-items-center justify-content-center"
           onClick={() => setShowModal(!showModal)}
         >
-          <Image className="max-vh-100 rounded-5" src={qrcode} fluid />
+          <Image className="max-vh-100 rounded-4" src={qrcode} fluid />
         </Modal.Body>
       </Modal>
     </section>
