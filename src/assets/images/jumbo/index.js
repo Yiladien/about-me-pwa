@@ -22,6 +22,10 @@ import throwballBall50Vert from "./throwball-vert-ball-1358x2000.png";
 import throwballBall25Vert from "./throwball-vert-ball-679x1000.png";
 import throwballBall10Vert from "./throwball-vert-ball-272x400.png";
 
+import ball50 from "./ball-660x660.png";
+import ball25 from "./ball-330x330.png";
+import ball10 from "./ball-132x132.png";
+
 export {
   throwball50,
   throwball25,
@@ -41,4 +45,7 @@ export {
   throwballBall50Vert,
   throwballBall25Vert,
   throwballBall10Vert,
+  ball50,
+  ball25,
+  ball10,
 };

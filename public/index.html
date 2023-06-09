@@ -2,8 +2,21 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" sizes="any" href="%PUBLIC_URL%/favicon.ico" />
+    <!-- <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="%PUBLIC_URL%//favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="%PUBLIC_URL%//favicon-16x16.png"
+    /> -->
     <meta
+      id="meta-viewport"
       name="viewport"
       content="width=device-width, initial-scale=1, viewport-fit=cover"
     />
@@ -12,11 +25,25 @@
       name="description"
       content="Web site created using create-react-app"
     />
-    <!-- PWA to fill behind apple notch & status bar. (also need viewport-fit=cover which is already set in previous meta viewport)-->
-    <meta name="apple-mobile-web-app-capable" content="yes"></meta>
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"></meta>
+    <!--  -->
+    <!-- iOS PWA to fill behind apple notch. (also need viewport-fit=cover which is already set in previous meta viewport)-->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- black-translucent for transparency behind notch. -->
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
     <!-- End pwa apple notch & status bar-->
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--  -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="%PUBLIC_URL%/apple-touch-icon.png"
+    />
+    <meta name="apple-mobile-web-app-title" content="MaddieOlguin" />
+
+    <link rel="apple-touch-startup-image" href="/launch.jpg" />
+
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -31,6 +58,12 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <title>Madison Olguin</title>
   </head>
   <body>
@@ -47,6 +80,4 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </body>
-
-  <script async src="https://platform.twitter.com/widgets.js"></script>
 </html>

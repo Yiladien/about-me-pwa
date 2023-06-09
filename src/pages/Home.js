@@ -2,8 +2,6 @@ import React from "react";
 
 import ThrowBall from "../components/ThrowBall";
 
-import NameBanner from "../components/NameBanner";
-
 const Home = () => {
   return (
     <section className="scroll-container">
@@ -11,7 +9,6 @@ const Home = () => {
         <div className="content-container">
           <ThrowBall />
         </div>
-        <NameBanner />
       </div>
     </section>
   );

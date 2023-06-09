@@ -31,7 +31,7 @@ const About = () => {
         }}
       />
       <div className="page-container">
-        <Row className="mb-3">
+        <Row className="mb-5">
           <Col className="d-flex justify-content-center">
             <h1>About Me</h1>
           </Col>
