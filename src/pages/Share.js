@@ -14,12 +14,12 @@ const Share = () => {
   return (
     <section className="scroll-container">
       <div className="page-container">
-        <Row className="mb-5">
+        <Row>
           <Col className="d-flex justify-content-center">
             <h1>Share</h1>
           </Col>
         </Row>
-        <Row>
+        <Row className="qrcode-box align-items-center">
           <Col
             xs={{ span: 8, offset: 2 }}
             md={{ span: 4, offset: 4 }}

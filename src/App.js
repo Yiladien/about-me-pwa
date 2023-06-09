@@ -7,9 +7,6 @@ import Contact from "./pages/Contact";
 import Media from "./pages/Media";
 import Share from "./pages/Share";
 import Save from "./pages/Save";
-import TestPage from "./pages/TestPage";
-// import ViewHeightForm from "./components/ViewHeightForm";
-// import Example from "./pages/Example";
 
 //to store the beoreinstallPrompt event
 let promptEvent = null;
@@ -118,41 +115,6 @@ function App() {
           promptEvent={promptEvent}
         />
       )}
-      <TestPage
-        safariiOSUser={pwaPrompt.safariiOSUser}
-        pwaPrompt={pwaPrompt}
-        page={1}
-      />
-      <TestPage
-        safariiOSUser={pwaPrompt.safariiOSUser}
-        pwaPrompt={pwaPrompt}
-        page={2}
-      />
-      <TestPage
-        safariiOSUser={pwaPrompt.safariiOSUser}
-        pwaPrompt={pwaPrompt}
-        page={3}
-      />
-      <TestPage
-        safariiOSUser={pwaPrompt.safariiOSUser}
-        pwaPrompt={pwaPrompt}
-        page={4}
-      />
-      <TestPage
-        safariiOSUser={pwaPrompt.safariiOSUser}
-        pwaPrompt={pwaPrompt}
-        page={5}
-      />
-      <TestPage
-        safariiOSUser={pwaPrompt.safariiOSUser}
-        pwaPrompt={pwaPrompt}
-        page={6}
-      />
-      <TestPage
-        safariiOSUser={pwaPrompt.safariiOSUser}
-        pwaPrompt={pwaPrompt}
-        page={7}
-      />
     </div>
   );
 }
