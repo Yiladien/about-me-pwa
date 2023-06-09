@@ -512,8 +512,8 @@ h1 {
     padding-bottom: 0rem;
   }
 
-  .install-logo {
-  }
+  /* .install-logo {
+  } */
 
   .install-popover ol {
     display: flex;
