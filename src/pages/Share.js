@@ -13,23 +13,25 @@ const Share = () => {
 
   return (
     <section className="scroll-container">
-      <div className="page-container">
+      <div className="page-container d-flex flex-column align-content-center">
         <Row>
           <Col className="d-flex justify-content-center">
-            <h1>Share</h1>
+            <h1 className="mb-1">Share</h1>
           </Col>
         </Row>
-        <Row className="qrcode-box align-items-center">
+        <Row className="qrcode-box flex-fill align-content-center justify-content-center pb-5">
+          {/* <Col xs={8} md={4} xl={2}> */}
+
           <Col
-            xs={{ span: 8, offset: 2 }}
-            md={{ span: 4, offset: 4 }}
-            xl={{ span: 2, offset: 5 }}
-            className="d-flex justify-content-center"
+            xs={8}
+            md={4}
+            xl={2}
+            className="d-flex align-content-center justify-content-center pb-3"
           >
             <Image
               className="click-pointer"
+              fluid
               src={qrcode}
-              thumbnail
               onClick={() => setShowModal(!showModal)}
             />
           </Col>

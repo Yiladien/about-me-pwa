@@ -16,7 +16,9 @@ function App() {
     displayMode: window.matchMedia("(display-mode: standalone)").matches,
     documentReferrer: document.referrer,
     navigatorStandalone: navigator.standalone,
-    launchMode: "",
+    launchMode: window.matchMedia("(display-mode: standalone)").matches
+      ? "standalone"
+      : "",
     installed: false,
     showInstall: true,
     beforeinstallEvent: null,

@@ -43,6 +43,7 @@ const Contact = () => {
                 onMouseEnter={toggleHovered}
                 onMouseLeave={toggleHovered}
                 name="email"
+                title="Email me!"
               >
                 {hovered.email ? (
                   <EnvelopeOpen style={{ transform: "translateY(-12.5%)" }} />
@@ -63,6 +64,7 @@ const Contact = () => {
                 onMouseEnter={toggleHovered}
                 onMouseLeave={toggleHovered}
                 name="telephone"
+                title="Call me!"
               >
                 {hovered.telephone ? <TelephoneOutbound /> : <Telephone />}
               </span>
@@ -70,18 +72,25 @@ const Contact = () => {
           </Col>
           <Col className="d-flex justify-content-center">
             <motion.div
-              whileHover={{ scale: 2 }}
+              initial={{ scale: 1, rotate: 0 }}
+              whileHover={{ scale: 2, rotate: [15, -15, 0] }}
               whileTap={{ scale: 2 }}
-              transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              transition={{
+                scale: { type: "spring", stiffness: 400, damping: 17 },
+                rotate: { duration: 0.5, ease: "easeInOut" },
+              }}
             >
               <span
                 className="icon-button"
                 onMouseEnter={toggleHovered}
                 onMouseLeave={toggleHovered}
                 name="messenger"
+                title="Message me!"
               >
                 {hovered.messenger ? (
-                  <Messenger style={{ transform: "rotate(10deg)" }} />
+                  <Messenger
+                  // style={{ transform: "rotate(10deg) rotate(-10deg)" }}
+                  />
                 ) : (
                   <Messenger />
                 )}

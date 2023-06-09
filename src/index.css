@@ -167,6 +167,10 @@ h1 {
   /* box-shadow: inset 0px 0px 0px 4px silver; */
 }
 
+.qrcode-box img {
+  border-radius: 1rem;
+}
+
 /* ----------------- */
 .install-popover {
   height: auto;
@@ -340,13 +344,22 @@ h1 {
   padding: 10%;
 } */
 
-.bg-absolute {
+.about-bg-img {
   position: absolute;
   top: 0;
   pointer-events: none;
   height: 100%;
   width: 100%;
   z-index: -1;
+  background-image: radial-gradient(
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 1) 90%
+    ),
+    url("./assets/images/backgrounds/sitting-w-ball-bg-vert-25.jpg");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
   /* box-shadow: inset 0px 20px 10px -10px rgba(0, 0, 0, 0.8); */
   box-shadow: inset 0px 0px 1rem 1rem rgba(0, 0, 0, 0.8);
   /* border-radius: 0%; */
@@ -539,5 +552,61 @@ h1 {
     top: -1rem;
     left: -1rem;
     transform: translate(0%, 0%);
+  }
+}
+
+@media only screen and (orientation: landscape) and (max-width: 575px) {
+  .about-bg-img {
+    background-image: radial-gradient(
+        rgba(0, 0, 0, 0.8),
+        rgba(0, 0, 0, 0.8),
+        rgba(0, 0, 0, 1) 90%
+      ),
+      url("./assets/images/backgrounds/sitting-w-ball-bg-25.jpg");
+  }
+}
+
+@media only screen and (orientation: landscape) and (min-width: 576px) {
+  .about-bg-img {
+    background-image: radial-gradient(
+        rgba(0, 0, 0, 0.8),
+        rgba(0, 0, 0, 0.8),
+        rgba(0, 0, 0, 1) 90%
+      ),
+      url("./assets/images/backgrounds/sitting-w-ball-bg-50.jpg");
+  }
+}
+
+@media only screen and (orientation: landscape) and (min-width: 992px) {
+  .about-bg-img {
+    background-image: radial-gradient(
+        rgba(0, 0, 0, 0.8),
+        rgba(0, 0, 0, 0.8),
+        rgba(0, 0, 0, 1) 90%
+      ),
+      url("./assets/images/backgrounds/sitting-w-ball-bg-100.jpg");
+  }
+}
+
+/* smallest portrait image is set by default */
+@media only screen and (orientation: portrait) and (min-width: 576px) {
+  .about-bg-img {
+    background-image: radial-gradient(
+        rgba(0, 0, 0, 0.8),
+        rgba(0, 0, 0, 0.8),
+        rgba(0, 0, 0, 1) 90%
+      ),
+      url("./assets/images/backgrounds/sitting-w-ball-bg-vert-50.jpg");
+  }
+}
+
+@media only screen and (orientation: portrait) and (min-width: 992px) {
+  .about-bg-img {
+    background-image: radial-gradient(
+        rgba(0, 0, 0, 0.8),
+        rgba(0, 0, 0, 0.8),
+        rgba(0, 0, 0, 1) 90%
+      ),
+      url("./assets/images/backgrounds/sitting-w-ball-bg-vert-100.jpg");
   }
 }
