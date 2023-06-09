@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.bfcd864c.css",
-    "main.js": "/static/js/main.c25d0e3e.js",
+    "main.css": "/static/css/main.cef05989.css",
+    "main.js": "/static/js/main.15f6f442.js",
     "static/js/787.258d0ea0.chunk.js": "/static/js/787.258d0ea0.chunk.js",
     "static/media/throwball-3000x2000.png": "/static/media/throwball-3000x2000.958f1817cf5cce8fd53c.png",
     "static/media/throwball-vert-1358x2000.png": "/static/media/throwball-vert-1358x2000.2eff3cd7ef16f5f1f6a6.png",
@@ -14,27 +14,32 @@
     "static/media/ball-660x660.png": "/static/media/ball-660x660.1cc627d24d6a9b212fa5.png",
     "static/media/throwball-noball-1000x1500.png": "/static/media/throwball-noball-1000x1500.40cd58e4eef8b6b17287.png",
     "static/media/throwball-vert-noball-679x1000.png": "/static/media/throwball-vert-noball-679x1000.69d51531c13e5e8fba59.png",
+    "static/media/sitting-w-ball-bg-100.jpg": "/static/media/sitting-w-ball-bg-100.0c240d6cb34341841847.jpg",
     "static/media/sitting-w-ball-bg-vert-100.jpg": "/static/media/sitting-w-ball-bg-vert-100.d59cb67b369e0eee8fd3.jpg",
     "static/media/qrcode-url-www.madisonolguin.com.png": "/static/media/qrcode-url-www.madisonolguin.com.dc40689dc5ce4e485bc7.png",
+    "static/media/sitting-w-ball-bg-50.jpg": "/static/media/sitting-w-ball-bg-50.b277b59137100704081f.jpg",
     "static/media/throwball-ball-1000x1500.png": "/static/media/throwball-ball-1000x1500.919f608d72c10fbff029.png",
     "static/media/throwball-vert-ball-679x1000.png": "/static/media/throwball-vert-ball-679x1000.19b3fd2ed063552d0503.png",
     "static/media/ball-330x330.png": "/static/media/ball-330x330.ac53f3c54ba8e16204e7.png",
     "static/media/throwball-600x400.png": "/static/media/throwball-600x400.6e80e5aa4c67558f5227.png",
     "static/media/throwball-vert-272x400.png": "/static/media/throwball-vert-272x400.648623c1e1f21ee21380.png",
+    "static/media/sitting-w-ball-bg-vert-50.jpg": "/static/media/sitting-w-ball-bg-vert-50.3ff9fbedf346b4539f95.jpg",
     "static/media/throwball-noball-400x600.png": "/static/media/throwball-noball-400x600.b03f974113e494fc3c3f.png",
     "static/media/throwball-vert-noball-272x400.png": "/static/media/throwball-vert-noball-272x400.b2cb89c9b105994c549a.png",
     "service-worker.js": "/service-worker.js",
+    "static/media/sitting-w-ball-bg-25.jpg": "/static/media/sitting-w-ball-bg-25.9bf7487f2c299c16bc4d.jpg",
+    "static/media/sitting-w-ball-bg-vert-25.jpg": "/static/media/sitting-w-ball-bg-vert-25.69c01d2288f92b159674.jpg",
     "static/media/throwball-ball-400x600.png": "/static/media/throwball-ball-400x600.2bed02ed28fc65d98d71.png",
     "static/media/throwball-vert-ball-272x400.png": "/static/media/throwball-vert-ball-272x400.18c8e7dd6ab4b817ade2.png",
     "static/media/ball-132x132.png": "/static/media/ball-132x132.784649c3dcca5c56a4ff.png",
     "index.html": "/index.html",
     "static/media/maxpreps-icon.svg": "/static/media/maxpreps-icon.e9ca0239295ba0878ad2879a04cb3fd2.svg",
-    "main.bfcd864c.css.map": "/static/css/main.bfcd864c.css.map",
-    "main.c25d0e3e.js.map": "/static/js/main.c25d0e3e.js.map",
+    "main.cef05989.css.map": "/static/css/main.cef05989.css.map",
+    "main.15f6f442.js.map": "/static/js/main.15f6f442.js.map",
     "787.258d0ea0.chunk.js.map": "/static/js/787.258d0ea0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.bfcd864c.css",
-    "static/js/main.c25d0e3e.js"
+    "static/css/main.cef05989.css",
+    "static/js/main.15f6f442.js"
   ]
 }
