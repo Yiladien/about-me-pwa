@@ -4,32 +4,12 @@ import React from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-import bgImage from "../assets/images/backgrounds/sitting-w-ball-bg-vert-100.jpg";
-
 import maxPrepIcon from "../assets/images/icons/maxpreps-icon.svg";
 
 const About = () => {
   return (
-    <section
-      className="scroll-container"
-      // style={{
-      //   backgroundImage: `linear-gradient(90deg, rgba(33,37,41, 0.9), rgba(33,37,41, 0.9)),
-      //      url('${bgImage}')`,
-      //   backgroundPosition: `center top`,
-      //   backgroundRepeat: `no-repeat`,
-      //   backgroundSize: `cover`,
-      // }}
-    >
-      <div
-        className="bg-absolute"
-        style={{
-          backgroundImage: `radial-gradient(rgba(0,0,0, 0.8), rgba(0,0,0, 0.8), rgba(0,0,0, 1) 90%),
-           url('${bgImage}')`,
-          backgroundPosition: `center top`,
-          backgroundRepeat: `no-repeat`,
-          backgroundSize: `cover`,
-        }}
-      />
+    <section className="scroll-container">
+      <div className="about-bg-img" />
       <div className="page-container">
         <Row className="mb-5">
           <Col className="d-flex justify-content-center">

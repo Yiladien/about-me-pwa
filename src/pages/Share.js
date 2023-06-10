@@ -11,29 +11,27 @@ import qrcode from "../assets/images/qrcode/qrcode-url-www.madisonolguin.com.png
 const Share = () => {
   const [showModal, setShowModal] = useState(false);
 
+  const handleModal = () => {
+    setShowModal(!showModal);
+  };
+
   return (
     <section className="scroll-container">
-      <div className="page-container">
+      <div className="page-container d-flex flex-column align-content-center pb-2">
         <Row>
           <Col className="d-flex justify-content-center">
-            <h1>Share</h1>
+            <h1 className="mb-1">Share</h1>
           </Col>
         </Row>
-        <Row className="qrcode-box align-items-center">
-          <Col
-            xs={{ span: 8, offset: 2 }}
-            md={{ span: 4, offset: 4 }}
-            xl={{ span: 2, offset: 5 }}
-            className="d-flex justify-content-center"
-          >
+        <div className="qrcode-box d-flex flex-column align-content-center justify-content-center w-100 h-100 flex-grow-0 pb-5 ps-5 pe-5">
+          <div className="d-inline-flex align-content-center justify-content-center mw-100 mh-100">
             <Image
-              className="click-pointer"
+              className="click-pointer mh-100"
               src={qrcode}
-              thumbnail
-              onClick={() => setShowModal(!showModal)}
+              onClick={handleModal}
             />
-          </Col>
-        </Row>
+          </div>
+        </div>
       </div>
       <Modal
         className="qrcode-modal"
@@ -44,7 +42,7 @@ const Share = () => {
       >
         <Modal.Body
           className="p-0 text-center bg-dark bg-opacity-10 d-flex align-items-center justify-content-center"
-          onClick={() => setShowModal(!showModal)}
+          onClick={handleModal}
         >
           <Image className="max-vh-100 rounded-4" src={qrcode} fluid />
         </Modal.Body>

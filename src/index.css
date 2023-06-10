@@ -167,6 +167,11 @@ h1 {
   /* box-shadow: inset 0px 0px 0px 4px silver; */
 }
 
+.qrcode-box img {
+  max-width: 75%;
+  border-radius: 1rem;
+}
+
 /* ----------------- */
 .install-popover {
   height: auto;
@@ -340,13 +345,22 @@ h1 {
   padding: 10%;
 } */
 
-.bg-absolute {
+.about-bg-img {
   position: absolute;
   top: 0;
   pointer-events: none;
   height: 100%;
   width: 100%;
   z-index: -1;
+  background-image: radial-gradient(
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 1) 90%
+    ),
+    url("./assets/images/backgrounds/sitting-w-ball-vert-bg-534x800.jpg");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
   /* box-shadow: inset 0px 20px 10px -10px rgba(0, 0, 0, 0.8); */
   box-shadow: inset 0px 0px 1rem 1rem rgba(0, 0, 0, 0.8);
   /* border-radius: 0%; */
@@ -539,5 +553,78 @@ h1 {
     top: -1rem;
     left: -1rem;
     transform: translate(0%, 0%);
+  }
+}
+
+@media only screen and (orientation: landscape) and (max-width: 450px) {
+  .about-bg-img {
+    background-image: radial-gradient(
+        rgba(0, 0, 0, 0.8),
+        rgba(0, 0, 0, 0.8),
+        rgba(0, 0, 0, 1) 90%
+      ),
+      url("./assets/images/backgrounds/sitting-w-ball-bg-450x300.jpg");
+    background-position-y: 40%;
+  }
+}
+
+@media only screen and (orientation: landscape) and (min-width: 451px) {
+  .about-bg-img {
+    background-image: radial-gradient(
+        rgba(0, 0, 0, 0.8),
+        rgba(0, 0, 0, 0.8),
+        rgba(0, 0, 0, 1) 90%
+      ),
+      url("./assets/images/backgrounds/sitting-w-ball-bg-750x500.jpg");
+    background-position-y: 40%;
+  }
+}
+
+@media only screen and (orientation: landscape) and (min-width: 751px) {
+  .about-bg-img {
+    background-image: radial-gradient(
+        rgba(0, 0, 0, 0.8),
+        rgba(0, 0, 0, 0.8),
+        rgba(0, 0, 0, 1) 90%
+      ),
+      url("./assets/images/backgrounds/sitting-w-ball-bg-1125x750.jpg");
+    background-position-y: 40%;
+  }
+}
+
+@media only screen and (orientation: landscape) and (min-width: 1126px) {
+  .about-bg-img {
+    background-image: radial-gradient(
+        rgba(0, 0, 0, 0.8),
+        rgba(0, 0, 0, 0.8),
+        rgba(0, 0, 0, 1) 90%
+      ),
+      url("./assets/images/backgrounds/sitting-w-ball-bg-1500x1000.jpg");
+    background-position-y: 40%;
+  }
+}
+
+/* smallest portrait image is set by default */
+@media only screen and (orientation: portrait) and (min-width: 535px) {
+  .about-bg-img {
+    background-image: radial-gradient(
+        rgba(0, 0, 0, 0.8),
+        rgba(0, 0, 0, 0.8),
+        rgba(0, 0, 0, 1) 90%
+      ),
+      url("./assets/images/backgrounds/sitting-w-ball-vert-bg-800x1200.jpg");
+    background-position-y: center;
+  }
+}
+
+@media only screen and (orientation: portrait) and (min-width: 801px) {
+  .about-bg-img {
+    background-image: radial-gradient(
+        rgba(0, 0, 0, 0.8),
+        rgba(0, 0, 0, 0.8),
+        rgba(0, 0, 0, 1) 90%
+      ),
+      url("./assets/images/backgrounds/sitting-w-ball-vert-bg-1067x1600.jpg");
+    background-position-y: center;
   }
 }

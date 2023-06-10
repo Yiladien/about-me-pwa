@@ -4,27 +4,15 @@ import React from "react";
 import Image from "react-bootstrap/Image";
 
 import {
-  // throwball50,
-  // throwball25,
-  // throwball10,
-  // throwballNoBall50,
-  // throwballNoBall25,
-  // throwballNoBall10,
-  // throwballBall50,
-  // throwballBall25,
-  // throwballBall10,
   throwball50Vert,
-  // throwball25Vert,
-  // throwball10Vert,
+  throwball25Vert,
+  throwball10Vert,
   throwballNoBall50Vert,
-  // throwballNoBall25Vert,
+  throwballNoBall25Vert,
   throwballNoBall10Vert,
   throwballBall50Vert,
-  // throwballBall25Vert,
+  throwballBall25Vert,
   throwballBall10Vert,
-  ball50,
-  ball25,
-  ball10,
 } from "../assets/images/jumbo/";
 
 import { motion } from "framer-motion";
@@ -55,24 +43,85 @@ const ThrowBall = () => {
   return (
     <div id="full-container">
       <div id="image-container">
-        <Image
+        <picture id="throw-no-ball-transparent" className="drop-shadow">
+          <source
+            srcSet={throwball50Vert}
+            media="only screen and (min-width: 679px)"
+            type="image/png"
+          />
+          <source
+            srcSet={throwball25Vert}
+            media="only screen and (min-width: 272px)"
+            type="image/png"
+          />
+          <img
+            id="throw-no-ball-transparent"
+            src={throwball10Vert}
+            className="img-fluid"
+            alt="madison-olguin"
+          />
+        </picture>
+        {/* <Image
           id="throw-no-ball-transparent"
           src={throwballNoBall50Vert}
           alt="madison-olguin"
-          className="drop-shadow"
-        />
-        <Image
+        /> */}
+
+        <picture id="throw-no-ball" className="drop-shadow">
+          <source
+            srcSet={throwballNoBall50Vert}
+            media="only screen and (min-width: 679px)"
+            type="image/png"
+            className="img-fluid"
+            alt="madison-olguin"
+          />
+          <source
+            srcSet={throwballNoBall25Vert}
+            media="only screen and (min-width: 272px)"
+            type="image/png"
+            className="img-fluid"
+            alt="madison-olguin"
+          />
+          <img
+            src={throwballNoBall10Vert}
+            className="img-fluid"
+            alt="madison-olguin"
+          />
+        </picture>
+        {/* <Image
           id="throw-no-ball"
           src={throwballNoBall50Vert}
           alt="madison-olguin"
           className="drop-shadow"
-        />
-        <Image
+        /> */}
+
+        <picture id="ball" className="drop-shadow">
+          <source
+            srcSet={throwballBall50Vert}
+            media="only screen and (min-width: 679px)"
+            type="image/png"
+            className="img-fluid"
+            alt="madison-olguin"
+          />
+          <source
+            srcSet={throwballBall25Vert}
+            media="only screen and (min-width: 272px)"
+            type="image/png"
+            className="img-fluid"
+            alt="madison-olguin"
+          />
+          <img
+            src={throwballBall10Vert}
+            className="img-fluid"
+            alt="madison-olguin"
+          />
+        </picture>
+        {/* <Image
           id="ball"
           src={throwballBall50Vert}
           alt="madison-olguin"
           className="drop-shadow"
-        />
+        /> */}
         <NameBanner />
       </div>
     </div>
