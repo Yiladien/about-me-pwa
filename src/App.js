@@ -8,6 +8,8 @@ import Media from "./pages/Media";
 import Share from "./pages/Share";
 import Save from "./pages/Save";
 
+import ScrollOverlay from "./components/ScrollOverlay";
+
 //to store the beoreinstallPrompt event
 let promptEvent = null;
 
@@ -106,17 +108,22 @@ function App() {
 
   return (
     <div className="App text-white">
-      <Home />
-      <About />
-      <Contact />
-      <Media />
-      <Share />
-      {pwaPrompt.launchMode !== "standalone" && (
-        <Save
-          safariiOSUser={pwaPrompt.safariiOSUser}
-          promptEvent={promptEvent}
-        />
-      )}
+      {/* <ScrollOverlay /> */}
+      {/* <div id="scroll-box"> */}
+      <ScrollOverlay>
+        <Home />
+        <About />
+        <Contact />
+        <Media />
+        <Share />
+        {pwaPrompt.launchMode !== "standalone" && (
+          <Save
+            safariiOSUser={pwaPrompt.safariiOSUser}
+            promptEvent={promptEvent}
+          />
+        )}
+      </ScrollOverlay>
+      {/* </div> */}
     </div>
   );
 }
