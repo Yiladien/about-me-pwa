@@ -1,4 +1,4 @@
-// First attempt - opted to use SVGs as overlay as pointer events is friendlier to ignore the element.
+// Second attempt - opted to use SVGs as overlay as pointer events is friendlier to ignore the element.
 // Future Ideas
 // - replace with nav and/or footer if user prefers
 // -
@@ -20,9 +20,9 @@
 // -- bsBlur... override blur-radius of boxShadow. numeric as pixels, or string for user to include unit
 // -- bsSpread...  override spread-radius of boxShadow. numeric as pixels, or string for user to include unit
 
-import React, { useEffect } from "react";
+import React from "react";
 
-const ScrollOverlay = ({
+const FixedOverlay = ({
   color = "#000000",
   overlayHeight = "10vh",
   envHeight = true,
@@ -36,64 +36,13 @@ const ScrollOverlay = ({
 
   console.log(!envHeight);
 
-  useEffect(() => {
-    window.scrollTo(0, 1);
-  }, []);
-
-  //   testing
-  const windowValues = {
-    outerWidth: window.outerWidth,
-    outerHeight: window.outerHeight,
-    innerWidth: window.innerWidth,
-    innerHeight: window.innerHeight,
-    screenTop: window.screenTop,
-    screenBottom: window.screenBottom,
-  };
-
   return (
     <>
       <div
         style={{
           position: "absolute",
           width: "100vw",
-          height: "calc(100vh + 1px)",
-          top: "0px",
-          left: "0px",
-          pointerEvents: "none",
-          backgroundColor: "red",
-          display: "none",
-        }}
-      >
-        <ul>
-          {Object.entries(windowValues).map((entry) => (
-            <li key={entry}>
-              {entry[0]}:{" "}
-              {entry[1] === undefined
-                ? "undefined"
-                : entry[1] === null
-                ? "null"
-                : entry[1].toString()}
-            </li>
-          ))}
-        </ul>
-        <ul>
-          {Object.entries(window).map((entry) => (
-            <li key={entry}>
-              {entry[0]}:{" "}
-              {entry[1] === undefined
-                ? "undefined"
-                : entry[1] === null
-                ? "null"
-                : entry[1].toString()}
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div
-        style={{
-          position: "absolute",
-          width: "100vw",
-          height: "calc(100vh + 1px)",
+          height: "100vh",
           top: "0px",
           left: "0px",
         }}
@@ -153,4 +102,4 @@ const ScrollOverlay = ({
   );
 };
 
-export default ScrollOverlay;
+export default FixedOverlay;

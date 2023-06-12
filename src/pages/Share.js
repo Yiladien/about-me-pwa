@@ -26,7 +26,7 @@ const Share = () => {
         <div className="qrcode-box d-flex flex-column align-content-center justify-content-center w-100 h-100 flex-grow-0 pb-5 ps-5 pe-5">
           <div className="d-inline-flex align-content-center justify-content-center mw-100 mh-100">
             <Image
-              className="click-pointer mh-100"
+              className="click-pointer mh-100 mw-100"
               src={qrcode}
               onClick={handleModal}
             />
