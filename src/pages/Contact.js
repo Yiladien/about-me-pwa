@@ -15,7 +15,7 @@ import {
 
 import { motion } from "framer-motion";
 
-const Contact = () => {
+const Contact = ({ marginTop, marginBottom }) => {
   const [hovered, setHovered] = useState({});
 
   const toggleHovered = (event) => {
@@ -24,7 +24,13 @@ const Contact = () => {
   };
 
   return (
-    <section className="scroll-container">
+    <section
+      className="scroll-container"
+      style={{
+        marginTop: marginTop,
+        marginBottom: marginBottom,
+      }}
+    >
       <div className="page-container">
         <Row className="mb-5">
           <Col className="d-flex justify-content-center">

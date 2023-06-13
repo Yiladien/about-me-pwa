@@ -36,9 +36,9 @@ const ScrollOverlay = ({
 
   console.log(!envHeight);
 
-  useEffect(() => {
-    window.scrollTo(0, 1);
-  }, []);
+  //   useEffect(() => {
+  //     window.scrollTo(0, 1);
+  //   }, []);
 
   //   testing
   const windowValues = {
@@ -49,6 +49,8 @@ const ScrollOverlay = ({
     screenTop: window.screenTop,
     screenBottom: window.screenBottom,
   };
+
+  console.log(props.children);
 
   return (
     <>
@@ -138,16 +140,33 @@ const ScrollOverlay = ({
           } - ${topHeight} - ${
             envHeight ? "env(safe-area-inset-bottom, 0vh)" : "0vh"
           } - ${bottomHeight})`,
-          top: `calc(((${
-            envHeight ? "env(safe-area-inset-top, 0vh)" : "0vh"
-          } + ${topHeight})/2) + ((${
-            envHeight ? "env(safe-area-inset-bottom, 0vh)" : "0vh"
-          } + ${bottomHeight})/2))`,
+          // if not using margins, moving top will keep div center aligned
+          //   top: `calc(((${
+          //     envHeight ? "env(safe-area-inset-top, 0vh)" : "0vh"
+          //   } + ${topHeight})/2) + ((${
+          //     envHeight ? "env(safe-area-inset-bottom, 0vh)" : "0vh"
+          //   } + ${bottomHeight})/2))`,
           overflow: "scroll",
           scrollSnapType: "y mandatory",
+          marginTop: `calc(${
+            envHeight ? "env(safe-area-inset-top, 0vh)" : "0vh"
+          } + ${topHeight})`,
+          marginBottom: `calc(${
+            envHeight ? "env(safe-area-inset-bottom, 0vh)" : "0vh"
+          } + ${bottomHeight})`,
         }}
       >
-        {props.children}
+        {React.Children.map(props.children, (child) => {
+          return React.cloneElement(child, {
+            ...child.props,
+            marginTop: `calc(${
+              envHeight ? "env(safe-area-inset-top, 0vh)" : "0vh"
+            } + ${topHeight})`,
+            marginBottom: `calc(${
+              envHeight ? "env(safe-area-inset-bottom, 0vh)" : "0vh"
+            } + ${bottomHeight})`,
+          });
+        })}
       </div>
     </>
   );

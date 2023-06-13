@@ -8,9 +8,15 @@ import { Twitter, Instagram, Facebook } from "react-bootstrap-icons";
 
 import { motion } from "framer-motion";
 
-const Media = () => {
+const Media = ({ marginTop, marginBottom }) => {
   return (
-    <section className="scroll-container">
+    <section
+      className="scroll-container"
+      style={{
+        marginTop: marginTop,
+        marginBottom: marginBottom,
+      }}
+    >
       <div className="page-container">
         <Row className="mb-5">
           <Col className="d-flex justify-content-center">
