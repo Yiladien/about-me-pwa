@@ -110,7 +110,7 @@ function App() {
     <div className="App text-white">
       {/* <ScrollOverlay /> */}
       {/* <div id="scroll-box"> */}
-      <ScrollOverlay color="blue">
+      <ScrollOverlay color="green">
         <Home />
         <About />
         <Contact />

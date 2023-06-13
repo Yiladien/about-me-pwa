@@ -96,6 +96,7 @@ const ScrollOverlay = ({
           position: "absolute",
           width: "100vw",
           height: "calc(100vh + 1px)",
+          height: "100vh",
           top: "0px",
           left: "0px",
         }}
