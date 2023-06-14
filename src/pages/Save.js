@@ -11,7 +11,7 @@ import { Download, BoxArrowUp, PlusSquare } from "react-bootstrap-icons";
 
 import appLogo from "../assets/images/logo/logo-128x128.png";
 
-const Save = ({ safariiOSUser, promptEvent, marginTop, marginBottom }) => {
+const Save = ({ safariiOSUser, promptEvent, paddingTop, paddingBottom }) => {
   const handleInstallClick = async (e1) => {
     console.log("handleInstallClick");
     e1.preventDefault();
@@ -31,8 +31,8 @@ const Save = ({ safariiOSUser, promptEvent, marginTop, marginBottom }) => {
     <section
       className="scroll-container"
       style={{
-        marginTop: marginTop,
-        marginBottom: marginBottom,
+        paddingTop: paddingTop,
+        paddingBottom: paddingBottom,
       }}
     >
       <div className="page-container">

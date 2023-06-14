@@ -35,9 +35,48 @@ const FixedOverlay = ({
   const bottomColor = props.bottomColor ? props.bottomColor : color;
 
   console.log(!envHeight);
+  console.log(zIndex);
 
   return (
     <>
+      <div
+        style={{
+          position: "relative",
+          width: "100vw",
+          height: `100vh`,
+          // height: `calc(100vh - ${
+          //   envHeight ? "env(safe-area-inset-top, 0vh)" : "0vh"
+          // } - ${topHeight} - ${
+          //   envHeight ? "env(safe-area-inset-bottom, 0vh)" : "0vh"
+          // } - ${bottomHeight})`,
+          // if not using margins, moving top will keep div center aligned
+          //   top: `calc(((${
+          //     envHeight ? "env(safe-area-inset-top, 0vh)" : "0vh"
+          //   } + ${topHeight})/2) + ((${
+          //     envHeight ? "env(safe-area-inset-bottom, 0vh)" : "0vh"
+          //   } + ${bottomHeight})/2))`,
+          overflow: "scroll",
+          scrollSnapType: "y mandatory",
+          paddingTop: `calc(${
+            envHeight ? "env(safe-area-inset-top, 0vh)" : "0vh"
+          } + ${topHeight})`,
+          paddingBottom: `calc(${
+            envHeight ? "env(safe-area-inset-bottom, 0vh)" : "0vh"
+          } + ${bottomHeight})`,
+        }}
+      >
+        {React.Children.map(props.children, (child) => {
+          return React.cloneElement(child, {
+            ...child.props,
+            paddingTop: `calc(${
+              envHeight ? "env(safe-area-inset-top, 0vh)" : "0vh"
+            } + ${topHeight})`,
+            paddingBottom: `calc(${
+              envHeight ? "env(safe-area-inset-bottom, 0vh)" : "0vh"
+            } + ${bottomHeight})`,
+          });
+        })}
+      </div>
       <div
         style={{
           position: "absolute",
@@ -45,6 +84,8 @@ const FixedOverlay = ({
           height: "100vh",
           top: "0px",
           left: "0px",
+          position: "fixed",
+          pointerEvents: "none",
         }}
       >
         <svg
@@ -60,7 +101,14 @@ const FixedOverlay = ({
             zIndex: `${zIndex}`,
           }}
         >
-          <rect x="0" y="0" height="100%" width="100%" fill={topColor} />
+          <rect
+            // style={{ zIndex: "9999" }}
+            x="0"
+            y="0"
+            height="100%"
+            width="100%"
+            fill={topColor}
+          />
         </svg>
         <svg
           style={{
@@ -78,7 +126,7 @@ const FixedOverlay = ({
           <rect x="0" y="0" height="100%" width="100%" fill={bottomColor} />
         </svg>
       </div>
-      <div
+      {/* <div
         style={{
           position: "relative",
           width: "100vw",
@@ -97,7 +145,7 @@ const FixedOverlay = ({
         }}
       >
         {props.children}
-      </div>
+      </div> */}
     </>
   );
 };

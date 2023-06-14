@@ -8,7 +8,8 @@ import Media from "./pages/Media";
 import Share from "./pages/Share";
 import Save from "./pages/Save";
 
-import ScrollOverlay from "./components/ScrollOverlay";
+// import ScrollOverlay from "./components/ScrollOverlay";
+import FixedOverlay from "./components/FixedOverlay";
 
 //to store the beoreinstallPrompt event
 let promptEvent = null;
@@ -110,7 +111,8 @@ function App() {
     <div className="App text-white">
       {/* <ScrollOverlay /> */}
       {/* <div id="scroll-box"> */}
-      <ScrollOverlay color="green">
+      {/* <ScrollOverlay color="green"> */}
+      <FixedOverlay>
         <Home />
         <About />
         <Contact />
@@ -122,7 +124,8 @@ function App() {
             promptEvent={promptEvent}
           />
         )}
-      </ScrollOverlay>
+      </FixedOverlay>
+      {/* </ScrollOverlay> */}
       {/* </div> */}
     </div>
   );

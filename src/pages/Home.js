@@ -2,13 +2,13 @@ import React from "react";
 
 import ThrowBall from "../components/ThrowBall";
 
-const Home = ({ marginTop, marginBottom }) => {
+const Home = ({ paddingTop, paddingBottom }) => {
   return (
     <section
       className="scroll-container"
       style={{
-        marginTop: marginTop,
-        marginBottom: marginBottom,
+        paddingTop: paddingTop,
+        paddingBottom: paddingBottom,
       }}
     >
       <div className="page-container">

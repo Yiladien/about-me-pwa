@@ -8,13 +8,13 @@ import { Twitter, Instagram, Facebook } from "react-bootstrap-icons";
 
 import { motion } from "framer-motion";
 
-const Media = ({ marginTop, marginBottom }) => {
+const Media = ({ paddingTop, paddingBottom }) => {
   return (
     <section
       className="scroll-container"
       style={{
-        marginTop: marginTop,
-        marginBottom: marginBottom,
+        paddingTop: paddingTop,
+        paddingBottom: paddingBottom,
       }}
     >
       <div className="page-container">

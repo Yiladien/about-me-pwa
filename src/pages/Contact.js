@@ -15,7 +15,7 @@ import {
 
 import { motion } from "framer-motion";
 
-const Contact = ({ marginTop, marginBottom }) => {
+const Contact = ({ paddingTop, paddingBottom }) => {
   const [hovered, setHovered] = useState({});
 
   const toggleHovered = (event) => {
@@ -27,8 +27,8 @@ const Contact = ({ marginTop, marginBottom }) => {
     <section
       className="scroll-container"
       style={{
-        marginTop: marginTop,
-        marginBottom: marginBottom,
+        paddingTop: paddingTop,
+        paddingBottom: paddingBottom,
       }}
     >
       <div className="page-container">

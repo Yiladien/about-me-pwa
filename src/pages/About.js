@@ -6,13 +6,13 @@ import Col from "react-bootstrap/Col";
 
 import maxPrepIcon from "../assets/images/icons/maxpreps-icon.svg";
 
-const About = ({ marginTop, marginBottom }) => {
+const About = ({ paddingTop, paddingBottom }) => {
   return (
     <section
       className="scroll-container"
       style={{
-        marginTop: marginTop,
-        marginBottom: marginBottom,
+        paddingTop: paddingTop,
+        paddingBottom: paddingBottom,
       }}
     >
       <div className="about-bg-img" />

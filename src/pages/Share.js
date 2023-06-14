@@ -6,7 +6,7 @@ import Modal from "react-bootstrap/Modal";
 
 import qrcode from "../assets/images/qrcode/qrcode-url-www.madisonolguin.com.png";
 
-const Share = ({ marginTop, marginBottom }) => {
+const Share = ({ paddingTop, paddingBottom }) => {
   const [showModal, setShowModal] = useState(false);
 
   const handleModal = () => {
@@ -17,8 +17,8 @@ const Share = ({ marginTop, marginBottom }) => {
     <section
       className="scroll-container"
       style={{
-        marginTop: marginTop,
-        marginBottom: marginBottom,
+        paddingTop: paddingTop,
+        paddingBottom: paddingBottom,
       }}
     >
       <div className="page-container d-flex flex-column align-content-center pb-2 w-100 h-100 ">
