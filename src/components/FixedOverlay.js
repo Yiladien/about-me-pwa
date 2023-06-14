@@ -1,4 +1,4 @@
-// First attempt - opted to use SVGs as overlay as pointer events is friendlier to ignore the element.
+// Second attempt - opted to use SVGs as overlay as pointer events is friendlier to ignore the element.
 // Future Ideas
 // - replace with nav and/or footer if user prefers
 // -
@@ -20,9 +20,9 @@
 // -- bsBlur... override blur-radius of boxShadow. numeric as pixels, or string for user to include unit
 // -- bsSpread...  override spread-radius of boxShadow. numeric as pixels, or string for user to include unit
 
-import React, { useEffect } from "react";
+import React from "react";
 
-const ScrollOverlay = ({
+const FixedOverlay = ({
   color = "#000000",
   overlayHeight = "10vh",
   envHeight = true,
@@ -35,70 +35,57 @@ const ScrollOverlay = ({
   const bottomColor = props.bottomColor ? props.bottomColor : color;
 
   console.log(!envHeight);
-
-  //   useEffect(() => {
-  //     window.scrollTo(0, 1);
-  //   }, []);
-
-  //   testing
-  const windowValues = {
-    outerWidth: window.outerWidth,
-    outerHeight: window.outerHeight,
-    innerWidth: window.innerWidth,
-    innerHeight: window.innerHeight,
-    screenTop: window.screenTop,
-    screenBottom: window.screenBottom,
-  };
-
-  console.log(props.children);
+  console.log(zIndex);
 
   return (
     <>
       <div
         style={{
-          position: "absolute",
+          position: "relative",
           width: "100vw",
-          height: "calc(100vh + 1px)",
-          top: "0px",
-          left: "0px",
-          pointerEvents: "none",
-          backgroundColor: "red",
-          display: "none",
+          height: `100vh`,
+          // height: `calc(100vh - ${
+          //   envHeight ? "env(safe-area-inset-top, 0vh)" : "0vh"
+          // } - ${topHeight} - ${
+          //   envHeight ? "env(safe-area-inset-bottom, 0vh)" : "0vh"
+          // } - ${bottomHeight})`,
+          // if not using margins, moving top will keep div center aligned
+          //   top: `calc(((${
+          //     envHeight ? "env(safe-area-inset-top, 0vh)" : "0vh"
+          //   } + ${topHeight})/2) + ((${
+          //     envHeight ? "env(safe-area-inset-bottom, 0vh)" : "0vh"
+          //   } + ${bottomHeight})/2))`,
+          overflow: "scroll",
+          scrollSnapType: "y mandatory",
+          paddingTop: `calc(${
+            envHeight ? "env(safe-area-inset-top, 0vh)" : "0vh"
+          } + ${topHeight})`,
+          paddingBottom: `calc(${
+            envHeight ? "env(safe-area-inset-bottom, 0vh)" : "0vh"
+          } + ${bottomHeight})`,
         }}
       >
-        <ul>
-          {Object.entries(windowValues).map((entry) => (
-            <li key={entry}>
-              {entry[0]}:{" "}
-              {entry[1] === undefined
-                ? "undefined"
-                : entry[1] === null
-                ? "null"
-                : entry[1].toString()}
-            </li>
-          ))}
-        </ul>
-        <ul>
-          {Object.entries(window).map((entry) => (
-            <li key={entry}>
-              {entry[0]}:{" "}
-              {entry[1] === undefined
-                ? "undefined"
-                : entry[1] === null
-                ? "null"
-                : entry[1].toString()}
-            </li>
-          ))}
-        </ul>
+        {React.Children.map(props.children, (child) => {
+          return React.cloneElement(child, {
+            ...child.props,
+            paddingTop: `calc(${
+              envHeight ? "env(safe-area-inset-top, 0vh)" : "0vh"
+            } + ${topHeight})`,
+            paddingBottom: `calc(${
+              envHeight ? "env(safe-area-inset-bottom, 0vh)" : "0vh"
+            } + ${bottomHeight})`,
+          });
+        })}
       </div>
       <div
         style={{
           position: "absolute",
           width: "100vw",
-          height: "calc(100vh + 1px)",
           height: "100vh",
           top: "0px",
           left: "0px",
+          position: "fixed",
+          pointerEvents: "none",
         }}
       >
         <svg
@@ -114,7 +101,14 @@ const ScrollOverlay = ({
             zIndex: `${zIndex}`,
           }}
         >
-          <rect x="0" y="0" height="100%" width="100%" fill={topColor} />
+          <rect
+            // style={{ zIndex: "9999" }}
+            x="0"
+            y="0"
+            height="100%"
+            width="100%"
+            fill={topColor}
+          />
         </svg>
         <svg
           style={{
@@ -132,7 +126,7 @@ const ScrollOverlay = ({
           <rect x="0" y="0" height="100%" width="100%" fill={bottomColor} />
         </svg>
       </div>
-      <div
+      {/* <div
         style={{
           position: "relative",
           width: "100vw",
@@ -141,36 +135,19 @@ const ScrollOverlay = ({
           } - ${topHeight} - ${
             envHeight ? "env(safe-area-inset-bottom, 0vh)" : "0vh"
           } - ${bottomHeight})`,
-          // if not using margins, moving top will keep div center aligned
-          //   top: `calc(((${
-          //     envHeight ? "env(safe-area-inset-top, 0vh)" : "0vh"
-          //   } + ${topHeight})/2) + ((${
-          //     envHeight ? "env(safe-area-inset-bottom, 0vh)" : "0vh"
-          //   } + ${bottomHeight})/2))`,
+          top: `calc(((${
+            envHeight ? "env(safe-area-inset-top, 0vh)" : "0vh"
+          } + ${topHeight})/2) + ((${
+            envHeight ? "env(safe-area-inset-bottom, 0vh)" : "0vh"
+          } + ${bottomHeight})/2))`,
           overflow: "scroll",
           scrollSnapType: "y mandatory",
-          marginTop: `calc(${
-            envHeight ? "env(safe-area-inset-top, 0vh)" : "0vh"
-          } + ${topHeight})`,
-          marginBottom: `calc(${
-            envHeight ? "env(safe-area-inset-bottom, 0vh)" : "0vh"
-          } + ${bottomHeight})`,
         }}
       >
-        {React.Children.map(props.children, (child) => {
-          return React.cloneElement(child, {
-            ...child.props,
-            marginTop: `calc(${
-              envHeight ? "env(safe-area-inset-top, 0vh)" : "0vh"
-            } + ${topHeight})`,
-            marginBottom: `calc(${
-              envHeight ? "env(safe-area-inset-bottom, 0vh)" : "0vh"
-            } + ${bottomHeight})`,
-          });
-        })}
-      </div>
+        {props.children}
+      </div> */}
     </>
   );
 };
 
-export default ScrollOverlay;
+export default FixedOverlay;

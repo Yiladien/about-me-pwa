@@ -6,11 +6,17 @@ import Col from "react-bootstrap/Col";
 
 import maxPrepIcon from "../assets/images/icons/maxpreps-icon.svg";
 
-const About = () => {
+const About = ({ paddingTop, paddingBottom }) => {
   return (
-    <section className="scroll-container">
-      <div className="about-bg-img" />
+    <section
+      className="scroll-container"
+      style={{
+        paddingTop: paddingTop,
+        paddingBottom: paddingBottom,
+      }}
+    >
       <div className="page-container pt-5">
+        <div className="about-bg-img" />
         <Row className="mb-5">
           <Col className="d-flex justify-content-center">
             <h1>About Me</h1>

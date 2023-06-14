@@ -8,9 +8,15 @@ import { Twitter, Instagram, Facebook } from "react-bootstrap-icons";
 
 import { motion } from "framer-motion";
 
-const Media = () => {
+const Media = ({ paddingTop, paddingBottom }) => {
   return (
-    <section className="scroll-container">
+    <section
+      className="scroll-container"
+      style={{
+        paddingTop: paddingTop,
+        paddingBottom: paddingBottom,
+      }}
+    >
       <div className="page-container">
         <Row className="mb-5">
           <Col className="d-flex justify-content-center">
