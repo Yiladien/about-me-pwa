@@ -15,8 +15,8 @@ const About = ({ paddingTop, paddingBottom }) => {
         paddingBottom: paddingBottom,
       }}
     >
-      <div className="about-bg-img" />
       <div className="page-container pt-5">
+        <div className="about-bg-img" />
         <Row className="mb-5">
           <Col className="d-flex justify-content-center">
             <h1>About Me</h1>
