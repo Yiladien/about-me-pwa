@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.0d6da49f.css",
-    "main.js": "/static/js/main.d00ffca7.js",
+    "main.css": "/static/css/main.45c65681.css",
+    "main.js": "/static/js/main.7db3bec3.js",
     "static/js/787.258d0ea0.chunk.js": "/static/js/787.258d0ea0.chunk.js",
     "static/media/throwball-3000x2000.png": "/static/media/throwball-3000x2000.958f1817cf5cce8fd53c.png",
     "static/media/throwball-vert-1358x2000.png": "/static/media/throwball-vert-1358x2000.2eff3cd7ef16f5f1f6a6.png",
@@ -35,12 +35,12 @@
     "static/media/ball-132x132.png": "/static/media/ball-132x132.784649c3dcca5c56a4ff.png",
     "index.html": "/index.html",
     "static/media/maxpreps-icon.svg": "/static/media/maxpreps-icon.e9ca0239295ba0878ad2879a04cb3fd2.svg",
-    "main.0d6da49f.css.map": "/static/css/main.0d6da49f.css.map",
-    "main.d00ffca7.js.map": "/static/js/main.d00ffca7.js.map",
+    "main.45c65681.css.map": "/static/css/main.45c65681.css.map",
+    "main.7db3bec3.js.map": "/static/js/main.7db3bec3.js.map",
     "787.258d0ea0.chunk.js.map": "/static/js/787.258d0ea0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0d6da49f.css",
-    "static/js/main.d00ffca7.js"
+    "static/css/main.45c65681.css",
+    "static/js/main.7db3bec3.js"
   ]
 }
