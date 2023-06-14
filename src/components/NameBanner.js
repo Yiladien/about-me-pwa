@@ -29,7 +29,30 @@ const NameBanner = () => {
       {/* banner background-dark */}
       <div id="banner-background-dark"></div>
       {/* banner background */}
-      <div id="banner-background"></div>
+      <motion.div
+        initial={{
+          opacity: 0,
+          skew: "-20deg",
+          y: "-200%",
+        }}
+        animate={{
+          opacity: 1,
+          y: "0%",
+        }}
+        transition={{
+          y: {
+            duration: 1.2,
+            delay: 0.5,
+            ease: [0, 0.71, 0.2, 1.01],
+          },
+          opacity: {
+            duration: 0.2,
+            delay: 0.5,
+            ease: [0, 0.71, 0.2, 1.01],
+          },
+        }}
+        id="banner-background"
+      />
 
       {/* olguin */}
       <div>
@@ -39,7 +62,31 @@ const NameBanner = () => {
           viewBox="-5 -5 280 120"
         >
           {Object.entries(paths.olguin).map((path) => (
-            <path key={`olguin-index-${path[0]}`} fill="#FFFFFF" d={path[1]} />
+            <motion.path
+              initial={{
+                opacity: 0,
+                pathLength: 0,
+                fill: "rgba(255, 255, 255, 0)",
+                strokeWidth: 1,
+                filter: "drop-shadow(0em 0em 0em #000000)",
+              }}
+              animate={{
+                opacity: 1,
+                pathLength: 1,
+                fill: "rgba(255, 255, 255, 1)",
+                strokeWidth: 0,
+                filter: "drop-shadow(0.25em 0.25em 0.25em #000000)",
+              }}
+              transition={{
+                default: { duration: 3, ease: "easeInOut" },
+                fill: { delay: 2.4, duration: 1, ease: [1, 0, 0.8, 1] },
+                strokeWidth: { delay: 2.8, duration: 1, ease: [1, 0, 0.8, 1] },
+                filter: { delay: 2.8, duration: 1, ease: [1, 0, 0.8, 1] },
+              }}
+              key={`olguin-index-${path[0]}`}
+              fill="#FFFFFF"
+              d={path[1]}
+            />
           ))}
         </svg>
       </div>
@@ -54,7 +101,31 @@ const NameBanner = () => {
           {Object.entries(paths.madison).map(
             (path, index) =>
               index > 0 && (
-                <path
+                <motion.path
+                  initial={{
+                    opacity: 0,
+                    pathLength: 0,
+                    fill: "rgba(255, 255, 255, 0)",
+                    strokeWidth: 1,
+                    filter: "drop-shadow(0em 0em 0em #000000)",
+                  }}
+                  animate={{
+                    opacity: 1,
+                    pathLength: 1,
+                    fill: "rgba(255, 255, 255, 1)",
+                    strokeWidth: 0,
+                    filter: "drop-shadow(0.25em 0.25em 0.25em #000000)",
+                  }}
+                  transition={{
+                    default: { duration: 3, ease: "easeInOut" },
+                    fill: { delay: 2.4, duration: 1, ease: [1, 0, 0.8, 1] },
+                    strokeWidth: {
+                      delay: 2.8,
+                      duration: 1,
+                      ease: [1, 0, 0.8, 1],
+                    },
+                    filter: { delay: 2.8, duration: 1, ease: [1, 0, 0.8, 1] },
+                  }}
                   key={`madison-index-${path[0]}`}
                   fill="#FFFFFF"
                   d={path[1]}
@@ -71,7 +142,31 @@ const NameBanner = () => {
           viewBox="-5 -5 280 120"
           fill="#FFFFFF"
         >
-          <path key={`madison-index-0`} fill="#FFFFFF" d={paths.madison[0]} />
+          <motion.path
+            initial={{
+              opacity: 0,
+              pathLength: 0,
+              fill: "rgba(255, 255, 255, 0)",
+              strokeWidth: 1,
+              filter: "drop-shadow(0em 0em 0em #000000)",
+            }}
+            animate={{
+              opacity: 1,
+              pathLength: 1,
+              fill: "rgba(255, 255, 255, 1)",
+              strokeWidth: 0,
+              filter: "drop-shadow(0.25em 0.25em 0.25em #000000)",
+            }}
+            transition={{
+              default: { duration: 3, ease: "easeInOut" },
+              fill: { delay: 2.4, duration: 1, ease: [1, 0, 0.8, 1] },
+              strokeWidth: { delay: 2.8, duration: 1, ease: [1, 0, 0.8, 1] },
+              filter: { delay: 2.8, duration: 1, ease: [1, 0, 0.8, 1] },
+            }}
+            key={`madison-index-0`}
+            fill="#FFFFFF"
+            d={paths.madison[0]}
+          />
         </svg>
       </div>
     </div>

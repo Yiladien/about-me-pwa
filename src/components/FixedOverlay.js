@@ -84,7 +84,6 @@ const FixedOverlay = ({
           height: "100vh",
           top: "0px",
           left: "0px",
-          position: "fixed",
           pointerEvents: "none",
         }}
       >
