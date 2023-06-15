@@ -63,7 +63,7 @@ const ThrowBall = () => {
               scale: 0,
             }}
             animate={{
-              opacity: 1,
+              opacity: 0,
               scale: 1,
             }}
             transition={{
