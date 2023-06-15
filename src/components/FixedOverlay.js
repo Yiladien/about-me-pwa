@@ -55,7 +55,7 @@ const FixedOverlay = ({
           //   } + ${topHeight})/2) + ((${
           //     envHeight ? "env(safe-area-inset-bottom, 0vh)" : "0vh"
           //   } + ${bottomHeight})/2))`,
-          overflow: "scroll",
+          overflow: "auto",
           scrollSnapType: "y mandatory",
           paddingTop: `calc(${
             envHeight ? "env(safe-area-inset-top, 0vh)" : "0vh"
