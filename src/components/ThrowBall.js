@@ -53,7 +53,7 @@ const ThrowBall = () => {
                 ease: [0, 0.71, 0.2, 1.01],
               },
               scale: {
-                duration: 1.8,
+                duration: 0.8,
                 delay: 0.5,
                 ease: [0, 0.71, 0.2, 1.01],
               },
@@ -99,7 +99,7 @@ const ThrowBall = () => {
                 ease: [0, 0.71, 0.2, 1.01],
               },
               scale: {
-                duration: 1.8,
+                duration: 0.8,
                 delay: 0.5,
                 ease: [0, 0.71, 0.2, 1.01],
               },
@@ -134,38 +134,40 @@ const ThrowBall = () => {
           <motion.img
             initial={{
               opacity: 0,
-              scale: 0,
+              scale: 0.25,
               rotate: 0,
-              originX: "70.3%",
-              originY: "70.2%",
+              originX: "65.3%",
+              originY: "60.2%",
             }}
             animate={{
               opacity: 1,
               scale: 1,
               rotate: 360,
+              // originX: "65.3%",
+              // originY: "60.2%",
               originX: "26.3%",
               originY: "22.2%",
             }}
             transition={{
               originX: {
-                duration: 1.2,
+                duration: 0.6,
                 delay: 0.5,
-                ease: [0, 0.71, 0.2, 1.01],
+                ease: "easeIn",
               },
               originY: {
-                duration: 1.2,
+                duration: 0.6,
                 delay: 0.5,
-                ease: [0, 0.71, 0.2, 1.01],
+                ease: "easeIn",
               },
               opacity: {
-                duration: 0.8,
+                duration: 0.3,
                 delay: 0.5,
                 ease: [0, 0.71, 0.2, 1.01],
               },
               scale: {
-                duration: 1.8,
-                delay: 0.5,
-                ease: [0, 0.71, 0.2, 1.01],
+                duration: 0.6,
+                delay: 0.6,
+                ease: "easeIn",
               },
               rotate: {
                 repeat: Infinity,
