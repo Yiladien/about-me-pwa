@@ -112,7 +112,7 @@ function App() {
       {/* <ScrollOverlay /> */}
       {/* <div id="scroll-box"> */}
       {/* <ScrollOverlay color="green"> */}
-      <FixedOverlay>
+      <FixedOverlay color="#000000">
         <Home />
         <About />
         <Contact />
