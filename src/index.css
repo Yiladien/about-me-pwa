@@ -2,7 +2,7 @@ html {
   --banner-bg-color: #193a71;
 
   scroll-snap-type: y mandatory;
-  height: 100vh;
+  /* height: 100vh; */
   padding: 0;
   margin: 0;
   /* overflow: hidden; */
@@ -19,7 +19,8 @@ body {
   background-color: #000000;
 
   position: relative;
-  height: 100vh;
+  /* height: 100vh; */
+  height: 100%;
 
   padding: 0;
   margin: 0;
@@ -82,16 +83,11 @@ h1 {
   fill: #00ff0050;
 } */
 
-/* #full-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  flex-direction: column;
-  flex-grow: 0;
-  position: relative;
-} */
+#full-container {
+  padding-bottom: 3rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
 
 /* #image-container {
   position: relative;
@@ -432,9 +428,10 @@ h1 {
   width: 100%;
   z-index: -1;
   background-image: radial-gradient(
-      rgba(0, 0, 0, 0.8),
-      rgba(0, 0, 0, 0.8),
-      rgba(0, 0, 0, 1) 90%
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 1) 80%
     ),
     url("./assets/images/backgrounds/sitting-w-ball-vert-bg-534x800.jpg");
   background-position: center 40%;
@@ -594,6 +591,10 @@ h1 {
     margin-bottom: 0.5rem;
   }
 
+  #full-container {
+    padding-bottom: 1rem;
+  }
+
   /* .qrcode-box img {
     padding: 1rem;
     border: none;
@@ -642,9 +643,9 @@ h1 {
 @media only screen and (orientation: landscape) and (max-width: 450px) {
   .about-bg-img {
     background-image: radial-gradient(
-        rgba(0, 0, 0, 0.8),
-        rgba(0, 0, 0, 0.8),
-        rgba(0, 0, 0, 1) 90%
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 1) 80%
       ),
       url("./assets/images/backgrounds/sitting-w-ball-bg-450x300.jpg");
     background-position-y: 40%;
@@ -654,9 +655,9 @@ h1 {
 @media only screen and (orientation: landscape) and (min-width: 451px) {
   .about-bg-img {
     background-image: radial-gradient(
-        rgba(0, 0, 0, 0.8),
-        rgba(0, 0, 0, 0.8),
-        rgba(0, 0, 0, 1) 90%
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 1) 80%
       ),
       url("./assets/images/backgrounds/sitting-w-ball-bg-750x500.jpg");
     background-position-y: 30%;
@@ -666,9 +667,9 @@ h1 {
 @media only screen and (orientation: landscape) and (min-width: 751px) {
   .about-bg-img {
     background-image: radial-gradient(
-        rgba(0, 0, 0, 0.8),
-        rgba(0, 0, 0, 0.8),
-        rgba(0, 0, 0, 1) 90%
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 1) 80%
       ),
       url("./assets/images/backgrounds/sitting-w-ball-bg-1125x750.jpg");
     background-position-y: 30%;
@@ -678,9 +679,9 @@ h1 {
 @media only screen and (orientation: landscape) and (min-width: 1126px) {
   .about-bg-img {
     background-image: radial-gradient(
-        rgba(0, 0, 0, 0.8),
-        rgba(0, 0, 0, 0.8),
-        rgba(0, 0, 0, 1) 90%
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 1) 80%
       ),
       url("./assets/images/backgrounds/sitting-w-ball-bg-1500x1000.jpg");
     background-position-y: 30%;
@@ -691,9 +692,9 @@ h1 {
 @media only screen and (orientation: portrait) and (min-width: 535px) {
   .about-bg-img {
     background-image: radial-gradient(
-        rgba(0, 0, 0, 0.8),
-        rgba(0, 0, 0, 0.8),
-        rgba(0, 0, 0, 1) 90%
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 1) 80%
       ),
       url("./assets/images/backgrounds/sitting-w-ball-vert-bg-800x1200.jpg");
     /* background-position-y: center; */
@@ -703,9 +704,9 @@ h1 {
 @media only screen and (orientation: portrait) and (min-width: 801px) {
   .about-bg-img {
     background-image: radial-gradient(
-        rgba(0, 0, 0, 0.8),
-        rgba(0, 0, 0, 0.8),
-        rgba(0, 0, 0, 1) 90%
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 1) 80%
       ),
       url("./assets/images/backgrounds/sitting-w-ball-vert-bg-1067x1600.jpg");
     /* background-position-y: center; */

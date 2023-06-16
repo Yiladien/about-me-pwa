@@ -6,6 +6,8 @@ import Col from "react-bootstrap/Col";
 
 import maxPrepIcon from "../assets/images/icons/maxpreps-icon.svg";
 
+import { motion } from "framer-motion";
+
 const About = ({ paddingTop, paddingBottom }) => {
   return (
     <section
@@ -16,7 +18,26 @@ const About = ({ paddingTop, paddingBottom }) => {
       }}
     >
       <div className="page-container pt-5">
-        <div className="about-bg-img" />
+        {/* background */}
+        <motion.div
+          initial={{
+            opacity: 0,
+          }}
+          whileInView={{
+            opacity: 1,
+          }}
+          viewport={{ amount: 0.5 }}
+          transition={{
+            opacity: {
+              duration: 3.8,
+              delay: 0.8,
+              ease: [0, 0.71, 0.2, 1.01],
+            },
+          }}
+          className="about-bg-img"
+        />
+
+        {/* content */}
         <Row className="mb-5">
           <Col className="d-flex justify-content-center">
             <h1>About Me</h1>
@@ -30,7 +51,6 @@ const About = ({ paddingTop, paddingBottom }) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              {" "}
               <span
                 className="svg-icon-link"
                 style={{
@@ -39,16 +59,7 @@ const About = ({ paddingTop, paddingBottom }) => {
                   backgroundSize: `contain`,
                   backgroundRepeat: `no-repeat`,
                 }}
-              >
-                {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 225 225">
-                  <rect fill="#e91d00" width="225" height="225" />
-                  <circle fill="#fff" cx="112.5" cy="81.5" r="9.5" />
-                  <path
-                    fill="#fff"
-                    d="m127,111l19-62h-25l-5.041,20.498c5.213,1.505,9.041,6.311,9.041,12.002,0,6.893-5.607,12.5-12.5,12.5s-12.5-5.607-12.5-12.5c0-5.903,4.118-10.852,9.629-12.154l-5.629-20.346h-25l19,62-21,65h25l10.5-33.702,10.5,33.702h25l-21-65Z"
-                  />
-                </svg> */}
-              </span>
+              ></span>
             </a>
           </Col>
         </Row>

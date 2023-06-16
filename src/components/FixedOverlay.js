@@ -34,117 +34,89 @@ const FixedOverlay = ({
   const topColor = props.topColor ? props.topColor : color;
   const bottomColor = props.bottomColor ? props.bottomColor : color;
 
-  console.log(!envHeight);
-  console.log(zIndex);
+  console.log(props.children);
 
   return (
     <>
       <div
         style={{
           position: "relative",
-          width: "100vw",
-          height: `100vh`,
-          // height: `calc(100vh - ${
-          //   envHeight ? "env(safe-area-inset-top, 0vh)" : "0vh"
-          // } - ${topHeight} - ${
-          //   envHeight ? "env(safe-area-inset-bottom, 0vh)" : "0vh"
-          // } - ${bottomHeight})`,
-          // if not using margins, moving top will keep div center aligned
-          //   top: `calc(((${
-          //     envHeight ? "env(safe-area-inset-top, 0vh)" : "0vh"
-          //   } + ${topHeight})/2) + ((${
-          //     envHeight ? "env(safe-area-inset-bottom, 0vh)" : "0vh"
-          //   } + ${bottomHeight})/2))`,
-          overflow: "scroll",
-          scrollSnapType: "y mandatory",
-          paddingTop: `calc(${
-            envHeight ? "env(safe-area-inset-top, 0vh)" : "0vh"
-          } + ${topHeight})`,
-          paddingBottom: `calc(${
-            envHeight ? "env(safe-area-inset-bottom, 0vh)" : "0vh"
-          } + ${bottomHeight})`,
+          width: "100%",
         }}
       >
-        {React.Children.map(props.children, (child) => {
-          return React.cloneElement(child, {
-            ...child.props,
-            paddingTop: `calc(${
-              envHeight ? "env(safe-area-inset-top, 0vh)" : "0vh"
-            } + ${topHeight})`,
-            paddingBottom: `calc(${
-              envHeight ? "env(safe-area-inset-bottom, 0vh)" : "0vh"
-            } + ${bottomHeight})`,
-          });
-        })}
-      </div>
-      <div
-        style={{
-          position: "absolute",
-          width: "100vw",
-          height: "100vh",
-          top: "0px",
-          left: "0px",
-          pointerEvents: "none",
-        }}
-      >
-        <svg
+        <div
           style={{
-            position: "absolute",
+            position: "-webkit-sticky",
+            position: "sticky",
+            width: "100%",
+            // height: "100%",
             top: "0px",
             left: "0px",
-            width: "100vw",
-            height: `calc(${
-              envHeight ? "env(safe-area-inset-top, 0vh)" : "0vh"
-            } + ${topHeight})`,
             pointerEvents: "none",
             zIndex: `${zIndex}`,
           }}
         >
-          <rect
-            // style={{ zIndex: "9999" }}
-            x="0"
-            y="0"
-            height="100%"
-            width="100%"
-            fill={topColor}
-          />
-        </svg>
-        <svg
-          style={{
-            position: "absolute",
-            bottom: "0px",
-            left: "0px",
-            width: "100vw",
-            height: `calc(${
-              envHeight ? "env(safe-area-inset-bottom, 0vh)" : "0vh"
-            } + ${bottomHeight})`,
-            pointerEvents: "none",
-            zIndex: `${zIndex}`,
-          }}
-        >
-          <rect x="0" y="0" height="100%" width="100%" fill={bottomColor} />
-        </svg>
+          {/* <div
+            style={{
+              position: "relative",
+              width: "100%",
+              // height: "100vh",
+              pointerEvents: "none",
+              boxShadow: "inset 0px 0px 0px 2px green",
+            }}
+          > */}
+          <div
+            style={{
+              position: "absolute",
+              width: "100%",
+              height: "100vh",
+              pointerEvents: "none",
+            }}
+          >
+            <svg
+              style={{
+                position: "absolute",
+                top: "0px",
+                left: "0px",
+                width: "100%",
+                height: `calc(${
+                  envHeight ? "env(safe-area-inset-top, 0vh)" : "0vh"
+                } + ${topHeight})`,
+                pointerEvents: "none",
+              }}
+            >
+              <rect x="0" y="0" height="100%" width="100%" fill={topColor} />
+            </svg>
+            <svg
+              style={{
+                position: "absolute",
+                bottom: "0px",
+                left: "0px",
+                width: "100%",
+                height: `calc(${
+                  envHeight ? "env(safe-area-inset-bottom, 0vh)" : "0vh"
+                } + ${bottomHeight})`,
+                pointerEvents: "none",
+              }}
+            >
+              <rect x="0" y="0" height="100%" width="100%" fill={bottomColor} />
+            </svg>
+          </div>
+          {/* </div> */}
+        </div>
+        {React.Children.map(props.children, (child) => {
+          if (child !== null) {
+            return React.cloneElement(child, {
+              paddingTop: `calc(${
+                envHeight ? "env(safe-area-inset-top, 0vh)" : "0vh"
+              } + ${topHeight})`,
+              paddingBottom: `calc(${
+                envHeight ? "env(safe-area-inset-bottom, 0vh)" : "0vh"
+              } + ${bottomHeight})`,
+            });
+          }
+        })}
       </div>
-      {/* <div
-        style={{
-          position: "relative",
-          width: "100vw",
-          height: `calc(100vh - ${
-            envHeight ? "env(safe-area-inset-top, 0vh)" : "0vh"
-          } - ${topHeight} - ${
-            envHeight ? "env(safe-area-inset-bottom, 0vh)" : "0vh"
-          } - ${bottomHeight})`,
-          top: `calc(((${
-            envHeight ? "env(safe-area-inset-top, 0vh)" : "0vh"
-          } + ${topHeight})/2) + ((${
-            envHeight ? "env(safe-area-inset-bottom, 0vh)" : "0vh"
-          } + ${bottomHeight})/2))`,
-          overflow: "scroll",
-          scrollSnapType: "y mandatory",
-        }}
-      >
-        {props.children}
-      </div> */}
     </>
   );
 };

@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import Image from "react-bootstrap/Image";
 import Modal from "react-bootstrap/Modal";
 
+import { motion } from "framer-motion";
+
 import qrcode from "../assets/images/qrcode/qrcode-url-www.madisonolguin.com.png";
 
 const Share = ({ paddingTop, paddingBottom }) => {
@@ -26,14 +28,24 @@ const Share = ({ paddingTop, paddingBottom }) => {
           <h1 className="mb-1">Share</h1>
         </div>
 
-        <div className="qrcode-box flex-grow-1 d-flex flex-column align-items-center justify-content-center position-relative p-5">
+        <motion.div
+          initial={{ opacity: 0, scale: 0 }}
+          whileInView={{ opacity: 1, scale: 0.8 }}
+          transition={{
+            delay: 0.5,
+            type: "spring",
+            stiffness: 400,
+            damping: 17,
+          }}
+          className="qrcode-box flex-grow-1 d-flex flex-column align-items-center justify-content-center position-relative p-5"
+        >
           <Image
-            style={{ boxShadow: "0px 0px 0px 2px green" }}
             className="click-pointer"
             src={qrcode}
             onClick={handleModal}
+            title="www.madisonolguin.com"
           />
-        </div>
+        </motion.div>
       </div>
       <Modal
         className="qrcode-modal"
