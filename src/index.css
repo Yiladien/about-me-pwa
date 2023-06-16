@@ -430,7 +430,8 @@ h1 {
   background-image: radial-gradient(
       rgba(0, 0, 0, 0.7),
       rgba(0, 0, 0, 0.7),
-      rgba(0, 0, 0, 1) 90%
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 1) 80%
     ),
     url("./assets/images/backgrounds/sitting-w-ball-vert-bg-534x800.jpg");
   background-position: center 40%;

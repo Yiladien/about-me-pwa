@@ -30,7 +30,7 @@ const About = ({ paddingTop, paddingBottom }) => {
           transition={{
             opacity: {
               duration: 3.8,
-              delay: 1,
+              delay: 0.8,
               ease: [0, 0.71, 0.2, 1.01],
             },
           }}

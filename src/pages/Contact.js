@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-import { Link } from "react-router-dom";
-
 //bootstrap
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -37,7 +35,7 @@ const Contact = ({ paddingTop, paddingBottom }) => {
         delay: isInView ? staggerIcons : 0,
       }
     );
-  }, [isInView]);
+  }, [isInView, animate, staggerIcons]);
 
   const toggleHovered = (event, value) => {
     console.log(value);
@@ -71,7 +69,7 @@ const Contact = ({ paddingTop, paddingBottom }) => {
                 className="link-light"
                 href="mailto:"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
                 // onClick={() =>
                 //   setTimeout(() => {
                 //     window.location = "mailto:";
@@ -105,7 +103,7 @@ const Contact = ({ paddingTop, paddingBottom }) => {
                 className="link-light"
                 href="tel:5555555555"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
                 // onClick={() =>
                 //   setTimeout(() => {
                 //     window.location = "tel:5555555555";
@@ -139,7 +137,7 @@ const Contact = ({ paddingTop, paddingBottom }) => {
                 className="link-light"
                 href="https://m.me/lolaolguin"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
                 // onClick={() =>
                 //   setTimeout(() => {
                 //     window.location = "https://m.me/lolaolguin";
