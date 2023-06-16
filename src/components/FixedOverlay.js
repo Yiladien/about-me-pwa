@@ -34,9 +34,6 @@ const FixedOverlay = ({
   const topColor = props.topColor ? props.topColor : color;
   const bottomColor = props.bottomColor ? props.bottomColor : color;
 
-  console.log(!envHeight);
-  console.log(zIndex);
-
   return (
     <>
       <div
@@ -122,26 +119,6 @@ const FixedOverlay = ({
           });
         })}
       </div>
-      {/* <div
-        style={{
-          position: "relative",
-          width: "100vw",
-          height: `calc(100vh - ${
-            envHeight ? "env(safe-area-inset-top, 0vh)" : "0vh"
-          } - ${topHeight} - ${
-            envHeight ? "env(safe-area-inset-bottom, 0vh)" : "0vh"
-          } - ${bottomHeight})`,
-          top: `calc(((${
-            envHeight ? "env(safe-area-inset-top, 0vh)" : "0vh"
-          } + ${topHeight})/2) + ((${
-            envHeight ? "env(safe-area-inset-bottom, 0vh)" : "0vh"
-          } + ${bottomHeight})/2))`,
-          overflow: "scroll",
-          scrollSnapType: "y mandatory",
-        }}
-      >
-        {props.children}
-      </div> */}
     </>
   );
 };

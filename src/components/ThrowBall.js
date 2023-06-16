@@ -17,26 +17,6 @@ import { motion } from "framer-motion";
 import NameBanner from "./NameBanner";
 
 const ThrowBall = () => {
-  // const ballAnimationSettings = {
-  //   duration: 2,
-  // vertical: {
-  //   originX: 26.3,
-  //   originY: 22.2,
-  // },
-  // horizontal: {
-  //   originX: 32.1,
-  //   originY: 22.2,
-  // },
-  //   vertical: {
-  //     originX: 26.3,
-  //     originY: 22.2,
-  //   },
-  //   horizontal: {
-  //     originX: 32.1,
-  //     originY: 22.2,
-  //   },
-  // };
-
   return (
     <div
       id="full-container"
