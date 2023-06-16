@@ -26,7 +26,7 @@ const About = ({ paddingTop, paddingBottom }) => {
           whileInView={{
             opacity: 1,
           }}
-          viewport={{ amount: "all" }}
+          viewport={{ amount: 0.5 }}
           transition={{
             opacity: {
               duration: 3.8,

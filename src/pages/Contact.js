@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+
+import { Link } from "react-router-dom";
 
 //bootstrap
 import Row from "react-bootstrap/Row";
@@ -13,14 +15,34 @@ import {
   Messenger,
 } from "react-bootstrap-icons";
 
-import { motion } from "framer-motion";
+import { motion, useAnimate, useInView, stagger } from "framer-motion";
 
 const Contact = ({ paddingTop, paddingBottom }) => {
   const [hovered, setHovered] = useState({});
 
-  const toggleHovered = (event) => {
+  const [scope, animate] = useAnimate();
+  const isInView = useInView(scope);
+
+  const staggerIcons = stagger(0.5, { startDelay: 0.5 });
+
+  useEffect(() => {
+    animate(
+      ".icon-div",
+      isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 },
+      {
+        type: "spring",
+        stiffness: 400,
+        damping: 17,
+        duration: 0.2,
+        delay: isInView ? staggerIcons : 0,
+      }
+    );
+  }, [isInView]);
+
+  const toggleHovered = (event, value) => {
+    console.log(value);
     const name = event.target.attributes.name.value;
-    setHovered({ [name]: !hovered[name] });
+    setHovered({ [name]: value });
   };
 
   return (
@@ -37,47 +59,74 @@ const Contact = ({ paddingTop, paddingBottom }) => {
             <h1>Contact Me</h1>
           </Col>
         </Row>
-        <Row className="mb-3">
+        <Row className="mb-3" ref={scope}>
           <Col className="d-flex justify-content-center">
             <motion.div
+              className="icon-div"
               whileHover={{ scale: 2 }}
               whileTap={{ scale: 2 }}
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
             >
-              <span
-                className="icon-button click-pointer"
-                onMouseEnter={toggleHovered}
-                onMouseLeave={toggleHovered}
-                name="email"
-                title="Email me!"
+              <a
+                className="link-light"
+                href="mailto:"
+                target="_blank"
+                rel="noopener"
+                // onClick={() =>
+                //   setTimeout(() => {
+                //     window.location = "mailto:";
+                //   }, 1500)
+                // }
               >
-                {hovered.email ? (
-                  <EnvelopeOpen style={{ transform: "translateY(-12.5%)" }} />
-                ) : (
-                  <Envelope />
-                )}
-              </span>
+                <span
+                  className="icon-button click-pointer"
+                  onMouseEnter={(e) => toggleHovered(e, true)}
+                  onMouseLeave={(e) => toggleHovered(e, false)}
+                  name="email"
+                  title="Email me!"
+                >
+                  {hovered.email ? (
+                    <EnvelopeOpen style={{ transform: "translateY(-12.5%)" }} />
+                  ) : (
+                    <Envelope />
+                  )}
+                </span>
+              </a>
             </motion.div>
           </Col>
           <Col className="d-flex justify-content-center">
             <motion.div
+              className="icon-div"
               whileHover={{ scale: 2 }}
               whileTap={{ scale: 2 }}
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
             >
-              <span
-                className="icon-button"
-                onMouseEnter={toggleHovered}
-                onMouseLeave={toggleHovered}
-                name="telephone"
-                title="Call me!"
+              <a
+                className="link-light"
+                href="tel:5555555555"
+                target="_blank"
+                rel="noopener"
+                // onClick={() =>
+                //   setTimeout(() => {
+                //     window.location = "tel:5555555555";
+                //   }, 1500)
+                // }
               >
-                {hovered.telephone ? <TelephoneOutbound /> : <Telephone />}
-              </span>
+                <span
+                  className="icon-button click-pointer"
+                  onMouseEnter={(e) => toggleHovered(e, true)}
+                  onMouseLeave={(e) => toggleHovered(e, false)}
+                  name="telephone"
+                  title="Call me!"
+                >
+                  {hovered.telephone ? <TelephoneOutbound /> : <Telephone />}
+                </span>
+              </a>
             </motion.div>
           </Col>
           <Col className="d-flex justify-content-center">
             <motion.div
+              className="icon-div"
               initial={{ scale: 1, rotate: 0 }}
               whileHover={{ scale: 2, rotate: [15, -15, 0] }}
               whileTap={{ scale: 2 }}
@@ -86,21 +135,33 @@ const Contact = ({ paddingTop, paddingBottom }) => {
                 rotate: { duration: 0.5, ease: "easeInOut" },
               }}
             >
-              <span
-                className="icon-button"
-                onMouseEnter={toggleHovered}
-                onMouseLeave={toggleHovered}
-                name="messenger"
-                title="Message me!"
+              <a
+                className="link-light"
+                href="https://m.me/lolaolguin"
+                target="_blank"
+                rel="noopener"
+                // onClick={() =>
+                //   setTimeout(() => {
+                //     window.location = "https://m.me/lolaolguin";
+                //   }, 1500)
+                // }
               >
-                {hovered.messenger ? (
-                  <Messenger
-                  // style={{ transform: "rotate(10deg) rotate(-10deg)" }}
-                  />
-                ) : (
-                  <Messenger />
-                )}
-              </span>
+                <span
+                  className="icon-button click-pointer"
+                  onMouseEnter={(e) => toggleHovered(e, true)}
+                  onMouseLeave={(e) => toggleHovered(e, false)}
+                  name="messenger"
+                  title="Message me!"
+                >
+                  {hovered.messenger ? (
+                    <Messenger
+                    // style={{ transform: "rotate(10deg) rotate(-10deg)" }}
+                    />
+                  ) : (
+                    <Messenger />
+                  )}
+                </span>
+              </a>
             </motion.div>
           </Col>
         </Row>
