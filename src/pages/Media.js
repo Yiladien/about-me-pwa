@@ -14,7 +14,7 @@ const Media = ({ paddingTop, paddingBottom }) => {
   const [scope, animate] = useAnimate();
   const isInView = useInView(scope);
 
-  const staggerIcons = stagger(0.5, { startDelay: 0.5 });
+  const staggerIcons = stagger(0.3, { startDelay: 0.5 });
 
   useEffect(() => {
     animate(
@@ -54,9 +54,9 @@ const Media = ({ paddingTop, paddingBottom }) => {
           <Col className="d-flex justify-content-center">
             <motion.div
               className="icon-div"
-              whileHover={{ scale: 2 }}
-              whileTap={{ scale: 2 }}
-              transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              initial={{ rotate: 0 }}
+              whileHover={{ rotate: [15, -15, 0] }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
             >
               <a
                 className="text-reset"
@@ -85,9 +85,9 @@ const Media = ({ paddingTop, paddingBottom }) => {
           <Col className="d-flex justify-content-center">
             <motion.div
               className="icon-div"
-              whileHover={{ scale: 2 }}
-              whileTap={{ scale: 2 }}
-              transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              initial={{ rotate: 0 }}
+              whileHover={{ rotate: [15, -15, 0] }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
             >
               <a
                 className="text-reset"
@@ -116,9 +116,9 @@ const Media = ({ paddingTop, paddingBottom }) => {
           <Col className="d-flex justify-content-center">
             <motion.div
               className="icon-div"
-              whileHover={{ scale: 2 }}
-              whileTap={{ scale: 2 }}
-              transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              initial={{ rotate: 0 }}
+              whileHover={{ rotate: [15, -15, 0] }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
             >
               <a
                 className="text-reset"

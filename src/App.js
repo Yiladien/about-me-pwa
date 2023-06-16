@@ -114,12 +114,12 @@ function App() {
         <Contact />
         <Media />
         <Share />
-        {pwaPrompt.launchMode !== "standalone" && (
+        {pwaPrompt.launchMode !== "standalone" ? (
           <Save
             safariiOSUser={pwaPrompt.safariiOSUser}
             promptEvent={promptEvent}
           />
-        )}
+        ) : null}
       </FixedOverlay>
     </div>
   );

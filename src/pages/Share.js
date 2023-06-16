@@ -30,7 +30,7 @@ const Share = ({ paddingTop, paddingBottom }) => {
 
         <motion.div
           initial={{ opacity: 0, scale: 0 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          whileInView={{ opacity: 1, scale: 0.8 }}
           transition={{
             delay: 0.5,
             type: "spring",

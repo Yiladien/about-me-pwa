@@ -34,38 +34,41 @@ const FixedOverlay = ({
   const topColor = props.topColor ? props.topColor : color;
   const bottomColor = props.bottomColor ? props.bottomColor : color;
 
+  console.log(props.children);
+
   return (
     <>
       <div
         style={{
           position: "relative",
-          width: "100vw",
-          // overflow: "auto",
-          // scrollSnapType: "y mandatory",
-          // paddingTop: `calc(${
-          //   envHeight ? "env(safe-area-inset-top, 0vh)" : "0vh"
-          // } + ${topHeight})`,
-          // paddingBottom: `calc(${
-          //   envHeight ? "env(safe-area-inset-bottom, 0vh)" : "0vh"
-          // } + ${bottomHeight})`,
+          width: "100%",
         }}
       >
         <div
           style={{
             position: "-webkit-sticky",
             position: "sticky",
-            width: "100vw",
-            height: "100%",
+            width: "100%",
+            // height: "100%",
             top: "0px",
             left: "0px",
             pointerEvents: "none",
             zIndex: `${zIndex}`,
           }}
         >
-          <div
+          {/* <div
             style={{
               position: "relative",
-              width: "100vw",
+              width: "100%",
+              // height: "100vh",
+              pointerEvents: "none",
+              boxShadow: "inset 0px 0px 0px 2px green",
+            }}
+          > */}
+          <div
+            style={{
+              position: "absolute",
+              width: "100%",
               height: "100vh",
               pointerEvents: "none",
             }}
@@ -75,28 +78,21 @@ const FixedOverlay = ({
                 position: "absolute",
                 top: "0px",
                 left: "0px",
-                width: "100vw",
+                width: "100%",
                 height: `calc(${
                   envHeight ? "env(safe-area-inset-top, 0vh)" : "0vh"
                 } + ${topHeight})`,
                 pointerEvents: "none",
               }}
             >
-              <rect
-                // style={{ zIndex: "9999" }}
-                x="0"
-                y="0"
-                height="100%"
-                width="100%"
-                fill={topColor}
-              />
+              <rect x="0" y="0" height="100%" width="100%" fill={topColor} />
             </svg>
             <svg
               style={{
                 position: "absolute",
                 bottom: "0px",
                 left: "0px",
-                width: "100vw",
+                width: "100%",
                 height: `calc(${
                   envHeight ? "env(safe-area-inset-bottom, 0vh)" : "0vh"
                 } + ${bottomHeight})`,
@@ -106,17 +102,19 @@ const FixedOverlay = ({
               <rect x="0" y="0" height="100%" width="100%" fill={bottomColor} />
             </svg>
           </div>
+          {/* </div> */}
         </div>
         {React.Children.map(props.children, (child) => {
-          return React.cloneElement(child, {
-            ...child.props,
-            paddingTop: `calc(${
-              envHeight ? "env(safe-area-inset-top, 0vh)" : "0vh"
-            } + ${topHeight})`,
-            paddingBottom: `calc(${
-              envHeight ? "env(safe-area-inset-bottom, 0vh)" : "0vh"
-            } + ${bottomHeight})`,
-          });
+          if (child !== null) {
+            return React.cloneElement(child, {
+              paddingTop: `calc(${
+                envHeight ? "env(safe-area-inset-top, 0vh)" : "0vh"
+              } + ${topHeight})`,
+              paddingBottom: `calc(${
+                envHeight ? "env(safe-area-inset-bottom, 0vh)" : "0vh"
+              } + ${bottomHeight})`,
+            });
+          }
         })}
       </div>
     </>
